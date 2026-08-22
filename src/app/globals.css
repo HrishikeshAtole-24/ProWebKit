@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Design tokens
+   Every color is an "R G B" triplet so Tailwind can apply opacity
+   modifiers (bg-brand/10). Swapping a `.theme-*` class on a wrapper
+   re-skins every shared component underneath it.
+   ------------------------------------------------------------------ */
+
+:root {
+  --pk-radius: 0.75rem;
+
+  --pk-bg: 255 255 255;
+  --pk-surface: 248 250 252;
+  --pk-subtle: 241 245 249;
+  --pk-line: 226 232 240;
+  --pk-ink: 15 23 42;
+  --pk-muted: 100 116 139;
+
+  --pk-brand: 37 99 235;
+  --pk-brand-soft: 231 238 254;
+  --pk-brand-fg: 255 255 255;
+
+  --pk-accent: 13 148 136;
+  --pk-accent-soft: 224 246 243;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Gallery / marketing shell — dark, product-like */
+.theme-kit {
+  --pk-radius: 0.875rem;
+
+  --pk-bg: 9 9 14;
+  --pk-surface: 19 19 27;
+  --pk-subtle: 29 29 40;
+  --pk-line: 44 44 58;
+  --pk-ink: 244 244 250;
+  --pk-muted: 150 150 170;
+
+  --pk-brand: 99 102 241;
+  --pk-brand-soft: 33 33 60;
+  --pk-brand-fg: 255 255 255;
+
+  --pk-accent: 45 212 191;
+  --pk-accent-soft: 18 48 46;
+  --pk-accent-fg: 4 24 22;
+}
+
+/* Chartered Accountant — navy + gold, institutional trust */
+.theme-ca {
+  --pk-radius: 0.75rem;
+
+  --pk-bg: 255 255 255;
+  --pk-surface: 248 250 252;
+  --pk-subtle: 240 244 249;
+  --pk-line: 224 231 240;
+  --pk-ink: 15 27 45;
+  --pk-muted: 97 112 133;
+
+  --pk-brand: 15 37 68;
+  --pk-brand-soft: 232 238 247;
+  --pk-brand-fg: 255 255 255;
+
+  --pk-accent: 176 138 60;
+  --pk-accent-soft: 249 243 230;
+  --pk-accent-fg: 28 21 6;
+}
+
+/* Doctor / clinic — teal + amber, calm and clinical */
+.theme-doctor {
+  --pk-radius: 1rem;
+
+  --pk-bg: 255 255 255;
+  --pk-surface: 246 251 250;
+  --pk-subtle: 236 247 244;
+  --pk-line: 216 234 230;
+  --pk-ink: 12 35 34;
+  --pk-muted: 88 111 109;
+
+  --pk-brand: 13 115 108;
+  --pk-brand-soft: 223 244 240;
+  --pk-brand-fg: 255 255 255;
+
+  --pk-accent: 202 105 20;
+  --pk-accent-soft: 253 240 224;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Law firm — ink + antique gold on warm paper, editorial */
+.theme-lawyer {
+  --pk-radius: 0.25rem;
+
+  --pk-bg: 253 252 250;
+  --pk-surface: 255 255 255;
+  --pk-subtle: 245 243 238;
+  --pk-line: 227 222 213;
+  --pk-ink: 24 24 27;
+  --pk-muted: 106 102 95;
+
+  --pk-brand: 26 32 44;
+  --pk-brand-soft: 236 238 242;
+  --pk-brand-fg: 255 255 255;
+
+  --pk-accent: 160 121 70;
+  --pk-accent-soft: 246 240 230;
+  --pk-accent-fg: 255 255 255;
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  ::selection {
+    @apply bg-accent/25;
+  }
+}
+
+@layer utilities {
+  /* Section separator that reads as a hairline, not a border */
+  .hairline {
+    @apply border-t border-line;
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgb(var(--pk-line) / 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--pk-line) / 0.6) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgb(var(--pk-line)) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
