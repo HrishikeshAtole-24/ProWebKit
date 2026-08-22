@@ -13,8 +13,7 @@ import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
 import { TemplateCard } from "@/components/gallery/template-card";
-import { categoryLabels, templates, templatesByCategory } from "@/lib/registry";
-import type { TemplateCategory } from "@/types/template";
+import { categoryLabels, categoryOrder, templates, templatesByCategory } from "@/lib/registry";
 
 const REPO = "https://github.com/HrishikeshAtole-24/ProWebKit";
 
@@ -57,11 +56,9 @@ const features = [
   },
 ];
 
-const order: TemplateCategory[] = ["ca", "doctor", "lawyer"];
-
 const stats: Array<[string, string]> = [
   ["100%", "TypeScript"],
-  ["3", "Professions covered"],
+  [String(categoryOrder.length), "Professions covered"],
   ["0", "UI dependencies"],
 ];
 
@@ -121,8 +118,9 @@ export default function HomePage() {
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
                 Production-ready Next.js templates for the practices that need a serious web
-                presence and rarely get one — chartered accountants, doctors and law firms.
-                Typed, themeable, accessible, and yours to fork.
+                presence and rarely get one — accountants, doctors, lawyers, architects,
+                developers, coaching institutes and designers. Typed, themeable, accessible,
+                and yours to fork.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <ButtonLink href="#templates" variant="primary" size="lg">
@@ -155,7 +153,7 @@ export default function HomePage() {
           />
 
           <div className="mt-12 space-y-16">
-            {order.map((category) => {
+            {categoryOrder.map((category) => {
               const items = templatesByCategory(category);
               return (
                 <div key={category}>

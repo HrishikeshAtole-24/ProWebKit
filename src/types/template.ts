@@ -1,6 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 
-export type TemplateCategory = "ca" | "doctor" | "lawyer";
+export type TemplateCategory =
+  | "ca"
+  | "doctor"
+  | "lawyer"
+  | "architect"
+  | "real-estate"
+  | "education"
+  | "fashion";
 
 export interface TemplateMeta {
   /** Unique id, also the folder name under src/templates. */
