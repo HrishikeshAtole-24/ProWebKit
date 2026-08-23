@@ -67,7 +67,7 @@ export function Hero() {
         }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="inline-flex items-center gap-2 rounded-sm border border-brand-fg/25 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-fg/80">
             {hero.eyebrow}
@@ -126,7 +126,7 @@ export function Capability() {
         description="Structural work, formwork and concreting are executed with owned plant and direct labour. What gets subcontracted is specialist trade work, and it is named in the bid."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {capability.map((item) => (
           <article key={item.sector} className="bg-bg p-7">
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
@@ -157,7 +157,7 @@ export function Projects() {
         description="Client names are withheld where confidentiality applies. Completion certificates and references are provided at pre-qualification."
       />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[860px] text-left text-sm">
           <caption className="sr-only">Completed and current projects</caption>
           <thead className="bg-subtle text-xs uppercase tracking-[0.12em] text-muted">
@@ -205,7 +205,7 @@ export function Projects() {
 export function Plant() {
   return (
     <Section id="plant">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Plant & equipment"
           title="Owned, not hired"
@@ -232,7 +232,7 @@ export function Safety() {
     <Section id="safety" tone="brand">
       <SectionHeading inverted eyebrow="Safety & quality" title={safety.title} description={safety.body} />
 
-      <dl className="mt-12 grid gap-px overflow-hidden border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-10 grid gap-px overflow-hidden border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
         {safety.metrics.map((metric) => (
           <div key={metric.label} className="bg-brand p-7">
             <dt className="text-3xl font-bold text-accent">{metric.value}</dt>
@@ -259,7 +259,7 @@ export function Safety() {
 export function Certifications() {
   return (
     <Section id="certifications">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
           <SectionHeading eyebrow="Certifications" title="Registrations and accreditations" />
           <ul className="mt-8 divide-y divide-line border-y border-line">
@@ -296,7 +296,7 @@ export function Certifications() {
 export function Tender() {
   return (
     <Section id="tender" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="From procurement teams" />
           <Accordion items={faqs} className="mt-8" />

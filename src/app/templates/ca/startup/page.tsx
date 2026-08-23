@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Customers,
   Demo,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function StartupCaTemplate() {
   return (
-    <div className="theme-ca-startup bg-bg text-ink">
-      <PreviewBar template="Startup CFO Desk · LedgerLab" />
+    <TemplateShell theme="theme-ca-startup" preview="Startup CFO Desk · LedgerLab">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function StartupCaTemplate() {
         <Demo />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Drop,
   Fabric,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function BoutiqueLabelTemplate() {
   return (
-    <div className="theme-fashion-boutique bg-bg text-ink">
-      <PreviewBar template="Boutique Label · Indigo Thread" />
+    <TemplateShell theme="theme-fashion-boutique" preview="Boutique Label · Indigo Thread">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function BoutiqueLabelTemplate() {
         <Wholesale />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

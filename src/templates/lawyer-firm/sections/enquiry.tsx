@@ -14,7 +14,7 @@ export function Offices() {
         description="Conferences are held in chambers or by video. Filings are made from the office nearest the forum."
       />
 
-      <div className="mt-14 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
+      <div className="mt-11 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
         {firm.offices.map((office) => (
           <article key={office.city} className="bg-bg p-8">
             <div className="flex items-center gap-2.5">
@@ -44,7 +44,7 @@ export function Offices() {
 export function Faq() {
   return (
     <Section id="faq" tone="subtle">
-      <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Enquiries"
           title="What to expect"
@@ -59,7 +59,7 @@ export function Faq() {
 export function Enquiry() {
   return (
     <Section id="enquiry">
-      <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Contact"

@@ -85,7 +85,7 @@ export function Collections() {
     <Section id="collections">
       <SectionHeading eyebrow="Collections" title="Four collections since 2024" />
 
-      <div className="mt-14 divide-y divide-line border-y border-line">
+      <div className="mt-11 divide-y divide-line border-y border-line">
         {collections.map((collection) => (
           <article key={collection.name} className="grid gap-5 py-9 lg:grid-cols-[1fr_1.4fr] lg:gap-14">
             <div>
@@ -113,7 +113,7 @@ export function Collections() {
       </div>
 
       {/* Lookbook grid placeholder */}
-      <div className="mt-14 grid grid-cols-2 gap-2 lg:grid-cols-4">
+      <div className="mt-11 grid grid-cols-2 gap-2 lg:grid-cols-4">
         {collections.map((collection) => (
           <div key={collection.name} className="aspect-[3/4] bg-subtle p-4" aria-hidden>
             <span className="text-[9px] uppercase tracking-[0.2em] text-muted">{collection.name}</span>
@@ -130,7 +130,7 @@ export function Commission() {
     <Section id="commission" tone="subtle">
       <SectionHeading eyebrow="Commissions" title={commission.title} description={commission.body} />
 
-      <ol className="mt-14 divide-y divide-line border-y border-line">
+      <ol className="mt-11 divide-y divide-line border-y border-line">
         {commission.steps.map((step) => (
           <li key={step.number} className="grid gap-3 py-7 lg:grid-cols-[3rem_1fr_8rem_1.5fr] lg:items-baseline lg:gap-10">
             <span className="font-serif text-sm text-accent">{step.number}</span>
@@ -147,7 +147,7 @@ export function Commission() {
 export function Atelier() {
   return (
     <Section id="atelier">
-      <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <SectionHeading eyebrow="The atelier" title={atelier.title} />
           <div className="mt-8 space-y-5">
@@ -185,7 +185,7 @@ export function Fittings() {
         description="Published because the honest answer is longer than most people expect, and it is better to know before the consultation than after."
       />
 
-      <div className="mt-14 overflow-x-auto">
+      <div className="mt-11 overflow-x-auto">
         <table className="w-full min-w-[640px] text-left text-sm">
           <caption className="sr-only">Typical timelines and number of fittings by garment</caption>
           <thead>
@@ -216,8 +216,8 @@ export function Fittings() {
 
 export function Press() {
   return (
-    <Section id="press">
-      <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
+    <Section id="press" space="compact">
+      <div className="grid gap-11 lg:grid-cols-2 lg:items-start">
         <div>
           <SectionHeading eyebrow="Press" title="Written about" />
           <ul className="mt-8 divide-y divide-line border-y border-line">
@@ -258,7 +258,7 @@ export function Press() {
 export function Appointment() {
   return (
     <Section id="appointment" tone="subtle">
-      <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Appointments"

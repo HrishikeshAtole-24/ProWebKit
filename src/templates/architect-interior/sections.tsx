@@ -64,8 +64,8 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #e8cdb8, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <Container className="relative py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="animate-fade-up">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">{hero.eyebrow}</p>
 
@@ -92,7 +92,7 @@ export function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
+            <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-serif text-2xl font-semibold text-brand">{stat.value}</dt>
@@ -143,7 +143,7 @@ export function Packages() {
         description="Ranges below cover design, materials, custom joinery and execution. Your itemised quote arrives after the 3D approval and does not move unless the scope does."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-start">
         {packages.map((pack) => (
           <article
             key={pack.name}
@@ -202,7 +202,7 @@ export function Rooms() {
         description="Interiors go wrong room by room, so that is how we design them — storage counted, circulation walked, ventilation checked."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {rooms.map((room) => (
           <article key={room.name} className="bg-bg p-7">
             <h3 className="font-serif text-lg font-semibold text-ink">{room.name}</h3>
@@ -217,14 +217,14 @@ export function Rooms() {
 
 export function Materials() {
   return (
-    <Section id="materials">
+    <Section id="materials" space="compact">
       <SectionHeading
         eyebrow="Material palettes"
         title="Four starting points, then yours"
         description="Most clients begin with one of these and drift. That is the point — the palette is a conversation opener, not a catalogue page."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {materials.map((material) => (
           <article key={material.palette} className="overflow-hidden rounded-card border border-line bg-surface">
             <div className="flex h-28" aria-hidden>
@@ -268,7 +268,7 @@ export function Process() {
         title="Five stages, and you know the week each one ends"
       />
 
-      <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+      <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
         {process.map((step) => (
           <li key={step.step} className="rounded-card border border-brand-fg/15 bg-brand-fg/[0.06] p-6">
             <div className="flex items-center justify-between">
@@ -295,7 +295,7 @@ export function Homes() {
         description="Replace the tiles below with photographs of your own completed projects."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {homes.map((home) => (
           <figure key={home.title} className="overflow-hidden rounded-card border border-line bg-surface">
             <div className="aspect-[4/3] bg-subtle" aria-hidden />
@@ -310,7 +310,7 @@ export function Homes() {
         ))}
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+      <div className="mt-11 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.author} className="flex flex-col rounded-card bg-subtle p-7">
             <blockquote className="flex-1 text-sm leading-relaxed text-ink">
@@ -330,7 +330,7 @@ export function Homes() {
 export function Consult() {
   return (
     <Section id="consult" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Before you book" />
           <Accordion items={faqs} className="mt-8" />

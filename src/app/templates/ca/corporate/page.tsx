@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import { CaFooter, CaHeader } from "@/templates/ca-corporate/brand";
 import { Hero } from "@/templates/ca-corporate/sections/hero";
 import { Industries, Services } from "@/templates/ca-corporate/sections/services";
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
 
 export default function CorporateCaTemplate() {
   return (
-    <div className="theme-ca bg-bg text-ink">
-      <PreviewBar template="Corporate CA · Aurum & Associates" />
+    <TemplateShell theme="theme-ca" preview="Corporate CA · Aurum & Associates">
       <CaHeader />
       <main>
         <Hero />
@@ -35,6 +34,6 @@ export default function CorporateCaTemplate() {
         <Contact />
       </main>
       <CaFooter />
-    </div>
+    </TemplateShell>
   );
 }

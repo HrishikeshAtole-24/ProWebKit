@@ -14,7 +14,7 @@ export function Hero() {
       />
 
       <Container className="relative pb-20 pt-16 sm:pb-28 sm:pt-24">
-        <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div className="grid gap-11 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="animate-fade-up">
             <p className="inline-flex items-center gap-2 rounded-full border border-brand-fg/20 px-3 py-1 text-xs font-medium text-brand-fg/80">
               <ShieldCheck className="h-3.5 w-3.5 text-accent" />

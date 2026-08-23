@@ -19,8 +19,8 @@ export function Hero() {
         aria-hidden
       />
 
-      <Container className="relative py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <Container className="relative py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="animate-fade-up">
             <p className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-bg px-3 py-1 text-xs font-medium text-brand">
               <ShieldCheck className="h-3.5 w-3.5" />

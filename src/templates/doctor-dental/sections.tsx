@@ -67,8 +67,8 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #bfe4ff, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <Container className="relative py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3.5 py-1.5 text-xs font-semibold text-accent">
               <Sparkles className="h-3.5 w-3.5" />
@@ -99,7 +99,7 @@ export function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
+            <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
               {hero.trustMarkers.map((marker) => (
                 <div key={marker.label}>
                   <dt className="text-2xl font-bold text-brand">{marker.value}</dt>
@@ -164,7 +164,7 @@ export function Treatments() {
         description="Ranges reflect complexity and materials. Your written plan after examination gives the exact figure, and it does not move unless the clinical picture does."
       />
 
-      <div className="mt-12 space-y-10">
+      <div className="mt-10 space-y-10">
         {treatments.map((group) => (
           <div key={group.group}>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
@@ -216,7 +216,7 @@ export function Visit() {
         title="Four steps, and you know all of them in advance"
       />
 
-      <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {visitSteps.map((step) => (
           <li key={step.step} className="rounded-card border border-line bg-bg p-7">
             <div className="flex items-center justify-between">
@@ -237,7 +237,7 @@ export function Visit() {
 export function Technology() {
   return (
     <Section id="technology">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <SectionHeading
           eyebrow="Technology"
           title="Equipment that shortens the visit, not the bill"
@@ -259,7 +259,7 @@ export function Technology() {
 export function Anxious() {
   return (
     <Section id="anxious" tone="brand">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div>
           <SectionHeading inverted eyebrow="Nervous patients" title={anxious.title} description={anxious.body} />
           <Link
@@ -293,7 +293,7 @@ export function Results() {
         description="Photographs are published only with written patient consent. Replace these placeholders with your own clinical images."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {results.map((item) => (
           <figure key={item.title} className="overflow-hidden rounded-card border border-line bg-surface">
             <div className="grid aspect-[4/3] grid-cols-2 gap-px bg-line">
@@ -318,7 +318,7 @@ export function Results() {
         ))}
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+      <div className="mt-11 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.author} className="flex flex-col rounded-card border border-line bg-surface p-7">
             <div className="flex gap-0.5 text-accent" aria-label="Rated 5 out of 5">
@@ -343,7 +343,7 @@ export function Results() {
 export function Book() {
   return (
     <Section id="book" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Before you book" />
           <Accordion items={faqs} className="mt-8" />

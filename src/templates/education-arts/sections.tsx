@@ -67,7 +67,7 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #0E7C7B, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{hero.eyebrow}</p>
 
@@ -95,7 +95,7 @@ export function Hero() {
           </div>
         </div>
 
-        <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-4">
+        <dl className="mt-11 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="bg-brand px-4 py-6 text-center">
               <dt className="font-serif text-2xl font-semibold text-accent">{stat.value}</dt>
@@ -117,7 +117,7 @@ export function Disciplines() {
         description="A student stays with the same guru through their training. Faculty do not rotate between batches at this academy, and that is deliberate."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {disciplines.map((discipline) => (
           <article
             key={discipline.name}
@@ -150,7 +150,7 @@ export function Grades() {
     <Section id="grades" tone="subtle">
       <SectionHeading eyebrow="Graded examinations" title={grades.title} description={grades.body} />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[760px] text-left text-sm">
           <caption className="sr-only">Levels, duration, syllabus and examinations</caption>
           <thead className="bg-bg text-xs uppercase tracking-[0.12em] text-muted">
@@ -188,7 +188,7 @@ export function Gurus() {
         description="In this tradition the bani a guru trained in tells you more than a certificate does. Ours are published."
       />
 
-      <div className="mt-12 divide-y divide-line border-y border-line">
+      <div className="mt-10 divide-y divide-line border-y border-line">
         {gurus.map((guru) => (
           <article key={guru.name} className="grid gap-5 py-7 lg:grid-cols-[auto_1fr_1.2fr] lg:gap-10">
             <span
@@ -218,7 +218,7 @@ export function Gurus() {
 export function Fees() {
   return (
     <Section id="fees" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Class formats & fees"
@@ -279,7 +279,7 @@ export function Fees() {
 export function Recital() {
   return (
     <Section id="recital" tone="brand">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <SectionHeading inverted eyebrow="The annual recital" title={recital.title} description={recital.body} />
           <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-fg">
@@ -304,12 +304,12 @@ export function Recital() {
 export function Trial() {
   return (
     <Section id="trial">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="What families ask first" />
           <Accordion items={faqs} className="mt-8" />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {outcomes.map((outcome) => (
               <figure key={outcome.author} className="rounded-card bg-subtle p-5">
                 <blockquote className="text-sm leading-relaxed text-ink">{outcome.quote}</blockquote>

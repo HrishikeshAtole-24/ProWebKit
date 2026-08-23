@@ -11,7 +11,7 @@ export function Services() {
         description="Most firms sell you a service. We take ownership of an obligation — the filing, the audit, the assessment — and report back against it."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
         {services.map(({ icon: Icon, title, description, points }) => (
           <article key={title} className="group bg-bg p-7 transition-colors hover:bg-surface">
             <span className="grid h-11 w-11 place-items-center rounded-card bg-brand-soft text-brand transition-colors group-hover:bg-accent group-hover:text-accent-fg">
@@ -38,8 +38,8 @@ export function Services() {
 
 export function Industries() {
   return (
-    <Section id="industries" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <Section id="industries" tone="surface" space="compact">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionHeading
           eyebrow="Industries"
           title="Sector knowledge you should not have to explain"

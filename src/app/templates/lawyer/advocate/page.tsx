@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   About,
   Contact,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function SoloAdvocateTemplate() {
   return (
-    <div className="theme-lawyer-advocate bg-bg text-ink">
-      <PreviewBar template="Solo Advocate · Adv. Kavita Menon" />
+    <TemplateShell theme="theme-lawyer-advocate" preview="Solo Advocate · Adv. Kavita Menon">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function SoloAdvocateTemplate() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

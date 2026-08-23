@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Capability,
   Certifications,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function ConstructionCompanyTemplate() {
   return (
-    <div className="theme-realestate-construction bg-bg text-ink">
-      <PreviewBar template="Construction Company · Ironwood Constructions" />
+    <TemplateShell theme="theme-realestate-construction" preview="Construction Company · Ironwood Constructions">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function ConstructionCompanyTemplate() {
         <Tender />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

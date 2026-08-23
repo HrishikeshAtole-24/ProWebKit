@@ -60,7 +60,7 @@ export function Hero() {
         }}
         aria-hidden
       />
-      <Container className="relative flex min-h-[68vh] flex-col justify-end py-20 sm:py-28">
+      <Container className="relative flex min-h-[68vh] flex-col justify-end py-14 sm:py-20">
         <p className="text-xs uppercase tracking-[0.32em] text-accent">
           Est. {studio.founded} · Bengaluru
         </p>
@@ -71,7 +71,7 @@ export function Hero() {
           {hero.subtitle}
         </p>
 
-        <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-brand-fg/20 pt-8">
+        <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-brand-fg/20 pt-8">
           <Link
             href="#works"
             className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-brand-fg transition hover:text-accent"
@@ -100,7 +100,7 @@ export function Works() {
         description="Each project below is complete and occupied. Drawings and full photo sets are available on request."
       />
 
-      <ol className="mt-14 divide-y divide-line border-y border-line">
+      <ol className="mt-11 divide-y divide-line border-y border-line">
         {works.map((work) => (
           <li key={work.index} className="group grid gap-4 py-8 lg:grid-cols-[4rem_1.1fr_1fr] lg:gap-10">
             <span className="text-xs uppercase tracking-[0.2em] text-accent">{work.index}</span>
@@ -123,7 +123,7 @@ export function Works() {
       </ol>
 
       {/* Image grid placeholder — swap each tile for a project photograph */}
-      <div className="mt-14 grid grid-cols-2 gap-px bg-line lg:grid-cols-4">
+      <div className="mt-11 grid grid-cols-2 gap-px bg-line lg:grid-cols-4">
         {works.slice(0, 4).map((work) => (
           <div key={work.index} className="aspect-[4/5] bg-subtle p-5">
             <span className="text-[10px] uppercase tracking-[0.18em] text-muted">
@@ -140,7 +140,7 @@ export function Works() {
 export function Practice() {
   return (
     <Section id="practice" tone="subtle">
-      <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <SectionHeading eyebrow="Practice" title={practice.title} />
           <div className="mt-8 space-y-5">
@@ -170,7 +170,7 @@ export function Services() {
     <Section id="services">
       <SectionHeading eyebrow="Services" title="Three areas of work" />
 
-      <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-3">
+      <div className="mt-11 grid gap-px border border-line bg-line md:grid-cols-3">
         {services.map((service) => (
           <article key={service.title} className="bg-bg p-8">
             <h3 className="text-lg font-semibold tracking-tight text-ink">{service.title}</h3>
@@ -198,7 +198,7 @@ export function Process() {
         description="Timelines below are typical for a private residence. Larger projects scale proportionally and are set out in the appointment."
       />
 
-      <ol className="mt-14 divide-y divide-brand-fg/15 border-y border-brand-fg/15">
+      <ol className="mt-11 divide-y divide-brand-fg/15 border-y border-brand-fg/15">
         {process.map((phase) => (
           <li key={phase.phase} className="grid gap-3 py-6 lg:grid-cols-[4rem_1fr_9rem_1.4fr] lg:items-baseline lg:gap-8">
             <span className="text-xs uppercase tracking-[0.2em] text-accent">{phase.phase}</span>
@@ -216,8 +216,8 @@ export function Process() {
 
 export function Recognition() {
   return (
-    <Section id="recognition">
-      <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
+    <Section id="recognition" space="compact">
+      <div className="grid gap-11 lg:grid-cols-2 lg:items-start">
         <div>
           <SectionHeading eyebrow="Recognition" title="Awards" />
           <dl className="mt-8 divide-y divide-line border-y border-line">
@@ -257,7 +257,7 @@ export function Studio() {
         description="The studio is deliberately small. Every project is led by a principal or an associate who stays on it through completion."
       />
 
-      <div className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-11 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {people.map((person) => (
           <article key={person.name} className="bg-bg p-7">
             <div className="mb-5 aspect-square bg-subtle" aria-hidden />
@@ -274,7 +274,7 @@ export function Studio() {
 export function Enquiry() {
   return (
     <Section id="enquiry">
-      <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-11 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Enquiries"

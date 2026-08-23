@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Admission,
   Courses,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function CoachingTemplate() {
   return (
-    <div className="theme-education-coaching bg-bg text-ink">
-      <PreviewBar template="Competitive Coaching · Apex Academy" />
+    <TemplateShell theme="theme-education-coaching" preview="Competitive Coaching · Apex Academy">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function CoachingTemplate() {
         <Admission />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

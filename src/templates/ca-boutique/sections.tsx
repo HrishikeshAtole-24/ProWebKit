@@ -36,7 +36,7 @@ export function Header() {
 export function Hero() {
   return (
     <section id="top" className="border-b border-line bg-surface">
-      <Container size="narrow" className="py-20 sm:py-28">
+      <Container size="narrow" className="py-14 sm:py-20">
         <div className="animate-fade-up">
           <p className="flex items-center gap-3 text-xs uppercase tracking-[0.24em] text-accent">
             <Minus className="h-4 w-8" strokeWidth={1.5} aria-hidden />
@@ -85,7 +85,7 @@ export function Principles() {
         description={chamber.capacity}
       />
 
-      <div className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+      <div className="mt-11 grid gap-x-12 gap-y-10 sm:grid-cols-2">
         {principles.map((principle) => (
           <article key={principle.number} className="border-t border-line pt-6">
             <p className="font-serif text-sm text-accent">{principle.number}</p>
@@ -107,7 +107,7 @@ export function Work() {
         description="The chamber is deliberately narrow. Everything below is argued personally; everything else is referred out."
       />
 
-      <ul className="mt-14 divide-y divide-line border-y border-line">
+      <ul className="mt-11 divide-y divide-line border-y border-line">
         {work.map((item) => (
           <li key={item.title} className="grid gap-2 py-6 sm:grid-cols-[16rem_1fr] sm:gap-10">
             <h3 className="font-serif text-lg font-semibold text-ink">{item.title}</h3>
@@ -128,7 +128,7 @@ export function Fit() {
         description="A chamber this size is the right answer for some problems and the wrong answer for others. Both lists below are real."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2">
         <div className="bg-bg p-8">
           <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             A good fit
@@ -170,7 +170,7 @@ export function Fees() {
         description="Indicative figures. A precise quote follows the first conversation, in writing, before any work starts."
       />
 
-      <dl className="mt-14 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-11 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
         {fees.map((fee) => (
           <div key={fee.label} className="bg-brand p-7">
             <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-fg/55">
@@ -193,7 +193,7 @@ export function Fees() {
 export function Faq() {
   return (
     <Section id="faq">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading eyebrow="Questions" title="Asked before the first meeting" />
         <Accordion items={faqs} />
       </div>
@@ -204,7 +204,7 @@ export function Faq() {
 export function Enquire() {
   return (
     <Section id="enquire" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Enquire"

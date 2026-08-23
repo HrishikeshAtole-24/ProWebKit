@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Appointment,
   Doctors,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function HospitalTemplate() {
   return (
-    <div className="theme-doctor-hospital bg-bg text-ink">
-      <PreviewBar template="Multi-speciality Hospital · Sanjeevani Hospital" />
+    <TemplateShell theme="theme-doctor-hospital" preview="Multi-speciality Hospital · Sanjeevani Hospital">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function HospitalTemplate() {
         <Appointment />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

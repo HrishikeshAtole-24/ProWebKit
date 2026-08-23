@@ -65,8 +65,8 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #e4620c, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <Container className="relative py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3.5 py-1.5 text-xs font-semibold text-accent-fg">
               <Trophy className="h-3.5 w-3.5" />
@@ -122,7 +122,7 @@ export function Hero() {
           </div>
         </div>
 
-        <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-4">
+        <dl className="mt-11 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="bg-brand px-4 py-6 text-center">
               <dt className="text-2xl font-bold text-accent">{stat.value}</dt>
@@ -140,7 +140,7 @@ export function Results() {
     <Section id="results">
       <SectionHeading eyebrow="Results" title={results.headline} description={results.note} />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[560px] text-left text-sm">
           <caption className="sr-only">2025 selection breakdown by examination</caption>
           <thead className="bg-subtle text-xs uppercase tracking-[0.12em] text-muted">
@@ -182,7 +182,7 @@ export function Courses() {
         description="There is no premium section. Whichever batch you join, the same teachers walk into the room."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {courses.map((course) => (
           <article
             key={course.name}
@@ -235,7 +235,7 @@ export function Faculty() {
         description="Named, with their qualifications and years. If a teacher leaves mid-session, parents are informed within the week."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {faculty.map((person) => (
           <article key={person.name} className="bg-bg p-7">
             <div className="flex items-start gap-4">
@@ -264,7 +264,7 @@ export function Tests() {
     <Section id="tests" tone="brand">
       <SectionHeading inverted eyebrow="Test series & support" title={tests.title} description={tests.body} />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {tests.features.map((feature) => (
           <article key={feature.title} className="rounded-card border border-brand-fg/15 bg-brand-fg/[0.06] p-6">
             <h3 className="text-base font-bold text-brand-fg">{feature.title}</h3>
@@ -279,7 +279,7 @@ export function Tests() {
 export function Fees() {
   return (
     <Section id="fees" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Fees"
@@ -340,12 +340,12 @@ export function Fees() {
 export function Admission() {
   return (
     <Section id="admission">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="What parents ask us" />
           <Accordion items={faqs} className="mt-8" />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure key={testimonial.author} className="rounded-card bg-subtle p-5">
                 <blockquote className="text-sm leading-relaxed text-ink">{testimonial.quote}</blockquote>

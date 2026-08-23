@@ -11,7 +11,7 @@ const telHref = `tel:${clinic.phone.replace(/[\s+]/g, "")}`;
 export function Faq() {
   return (
     <Section id="faq" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Good to know"
           title="Common questions"
@@ -26,7 +26,7 @@ export function Faq() {
 export function Appointment() {
   return (
     <Section id="appointment">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <form
           className="order-2 rounded-card border border-line bg-bg p-7 shadow-soft sm:p-8 lg:order-1"
           action="#"

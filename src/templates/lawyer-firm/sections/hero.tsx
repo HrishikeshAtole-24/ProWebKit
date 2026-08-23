@@ -15,7 +15,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <Container className="relative py-20 sm:py-28">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-4xl animate-fade-up">
           <p className="flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-accent">
             <span className="h-px w-8 bg-accent" aria-hidden />

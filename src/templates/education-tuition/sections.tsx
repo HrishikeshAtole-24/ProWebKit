@@ -69,7 +69,7 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #ffe9ae, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-bg px-3.5 py-1.5 text-xs font-semibold text-brand shadow-soft">
             <Heart className="h-3.5 w-3.5 text-accent" />
@@ -122,7 +122,7 @@ export function Classes() {
         title="Four groups, capped batches, every subject taught properly"
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {classes.map((group) => (
           <article key={group.group} className="flex flex-col rounded-card border border-line bg-surface p-7">
             <h3 className="text-lg font-bold text-ink">{group.group}</h3>
@@ -166,7 +166,7 @@ export function Timetable() {
         description="Saturdays are kept for doubts, weekly tests and parent meetings. Nothing new is taught on a Saturday."
       />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[860px] text-left text-sm">
           <caption className="sr-only">Weekly class timetable</caption>
           <thead className="bg-bg text-xs uppercase tracking-[0.12em] text-muted">
@@ -211,7 +211,7 @@ export function Method() {
         description="None of it is clever. All of it is the difference between a child who improves and one who just attends."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {method.map((item) => (
           <article key={item.title} className="rounded-card border border-brand-fg/15 bg-brand-fg/[0.07] p-6">
             <h3 className="text-base font-bold text-brand-fg">{item.title}</h3>
@@ -232,7 +232,7 @@ export function Teachers() {
         description="No rotating pool of part-timers. The same person teaches your child the subject all year."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {teachers.map((teacher) => (
           <article key={teacher.name} className="rounded-card border border-line bg-surface p-6">
             <div className="flex items-start gap-4">
@@ -259,7 +259,7 @@ export function Teachers() {
 export function Fees() {
   return (
     <Section id="fees" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Fees"
@@ -318,12 +318,12 @@ export function Fees() {
 export function Enrol() {
   return (
     <Section id="enrol">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Parents ask" title="Before you enrol" />
           <Accordion items={faqs} className="mt-8" />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure key={testimonial.author} className="rounded-card bg-subtle p-5">
                 <blockquote className="text-sm leading-relaxed text-ink">{testimonial.quote}</blockquote>
@@ -335,7 +335,7 @@ export function Enrol() {
             ))}
           </div>
 
-          <dl className="mt-12 grid gap-4 border-t border-line pt-8 text-sm sm:grid-cols-3">
+          <dl className="mt-10 grid gap-4 border-t border-line pt-8 text-sm sm:grid-cols-3">
             <div className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               <div>

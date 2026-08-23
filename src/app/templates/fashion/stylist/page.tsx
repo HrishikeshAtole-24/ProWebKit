@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Audit,
   Book,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function StylistTemplate() {
   return (
-    <div className="theme-fashion-stylist bg-bg text-ink">
-      <PreviewBar template="Personal Stylist · Form & Figure" />
+    <TemplateShell theme="theme-fashion-stylist" preview="Personal Stylist · Form & Figure">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function StylistTemplate() {
         <Book />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

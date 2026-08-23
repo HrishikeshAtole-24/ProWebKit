@@ -8,7 +8,7 @@ import { consultationTopics, faqs, firm } from "../content";
 export function Faq() {
   return (
     <Section id="faq">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <SectionHeading
           eyebrow="Before you call"
           title="Questions we are asked on every first call"
@@ -34,7 +34,7 @@ const contactDetails = [
 export function Contact() {
   return (
     <Section id="contact" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <SectionHeading
             eyebrow="Get in touch"

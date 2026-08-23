@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import { ClinicFooter, ClinicHeader } from "@/templates/doctor-clinic/brand";
 import { Hero } from "@/templates/doctor-clinic/sections/hero";
 import { Specialisations, Treatments } from "@/templates/doctor-clinic/sections/care";
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
 
 export default function DoctorClinicTemplate() {
   return (
-    <div className="theme-doctor bg-bg text-ink">
-      <PreviewBar template="Clinic · Aarogya Clinic" />
+    <TemplateShell theme="theme-doctor" preview="Clinic · Aarogya Clinic">
       <ClinicHeader />
       <main>
         <Hero />
@@ -35,6 +34,6 @@ export default function DoctorClinicTemplate() {
         <Appointment />
       </main>
       <ClinicFooter />
-    </div>
+    </TemplateShell>
   );
 }

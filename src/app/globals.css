@@ -115,6 +115,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Anchor jumps land below the sticky header rather than under it. */
+    scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -156,6 +158,76 @@
   .dot-grid {
     background-image: radial-gradient(rgb(var(--pk-line)) 1px, transparent 1px);
     background-size: 22px 22px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Long-page ergonomics
+   These pages are deliberately complete, which makes them tall. The
+   rules below make the scroll feel navigable rather than endless.
+   ------------------------------------------------------------------ */
+
+@keyframes pk-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * Sections fade up as they enter the viewport, driven entirely by the
+ * scroll position — no JavaScript, no IntersectionObserver, and no risk
+ * of content staying invisible: the default state is fully visible and
+ * the animation only applies where the browser supports it.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: pk-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 42%;
+    }
+  }
+}
+
+/* Thin reading-progress rail pinned to the top of the viewport. */
+.pk-progress {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  height: 2px;
+  transform-origin: 0 50%;
+  background: rgb(var(--pk-accent));
+  will-change: transform;
+}
+
+/* Floating "back to top" control. */
+.pk-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 55;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .pk-to-top {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
+
+@media print {
+  .pk-progress,
+  .pk-to-top {
+    display: none;
   }
 }
 

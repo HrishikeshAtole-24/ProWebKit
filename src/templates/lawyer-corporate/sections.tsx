@@ -68,7 +68,7 @@ export function Hero() {
         }}
         aria-hidden
       />
-      <Container className="relative py-20 sm:py-28">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-sm bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg">
             <Timer className="h-3.5 w-3.5" />
@@ -128,7 +128,7 @@ export function Services() {
         description="You do not have a corporate law problem. You have a round to close, a contract to sign or an acquirer at the table."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
           <article key={service.stage} className="bg-bg p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
@@ -159,7 +159,7 @@ export function Transactions() {
         description="Published with client consent. Values are aggregate transaction size, not fees."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {transactions.map((deal) => (
           <article key={deal.detail} className="bg-bg p-7">
             <div className="flex items-baseline justify-between gap-4">
@@ -180,7 +180,7 @@ export function Transactions() {
 export function Sectors() {
   return (
     <Section id="sectors">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Sectors"
           title="Where the regulator matters as much as the contract"
@@ -210,7 +210,7 @@ export function Packages() {
         description="Standard mandates at a published price with a turnaround commitment. Complex or contested transactions are scoped separately."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-start">
         {packages.map((pack) => (
           <article
             key={pack.name}
@@ -271,7 +271,7 @@ export function Team() {
         title="Partners who are on the call, not on the letterhead"
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
         {team.map((person) => (
           <article key={person.name} className="bg-bg p-7">
             <div className="flex items-start gap-4">
@@ -292,7 +292,7 @@ export function Team() {
         ))}
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+      <div className="mt-11 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.role} className="flex flex-col rounded-card border border-line bg-surface p-7">
             <blockquote className="flex-1 text-sm leading-relaxed text-ink">
@@ -312,7 +312,7 @@ export function Team() {
 export function Faq() {
   return (
     <Section id="faq" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading eyebrow="FAQ" title="Asked before the engagement letter" />
         <Accordion items={faqs} />
       </div>
@@ -323,7 +323,7 @@ export function Faq() {
 export function Contact() {
   return (
     <Section id="contact">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Contact"

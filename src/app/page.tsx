@@ -13,6 +13,7 @@ import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
 import { TemplateCard } from "@/components/gallery/template-card";
+import { ReadingProgress } from "@/components/layout/reading-progress";
 import { categoryLabels, categoryOrder, templates, templatesByCategory } from "@/lib/registry";
 
 const REPO = "https://github.com/HrishikeshAtole-24/ProWebKit";
@@ -65,6 +66,7 @@ const stats: Array<[string, string]> = [
 export default function HomePage() {
   return (
     <div className="theme-kit min-h-screen bg-bg text-ink">
+      <ReadingProgress />
       <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur-md">
         <Container className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">

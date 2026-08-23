@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Appointment,
   Atelier,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function CoutureAtelierTemplate() {
   return (
-    <div className="theme-fashion-couture bg-bg text-ink">
-      <PreviewBar template="Couture Atelier · Atelier Rhea" />
+    <TemplateShell theme="theme-fashion-couture" preview="Couture Atelier · Atelier Rhea">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function CoutureAtelierTemplate() {
         <Appointment />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

@@ -11,7 +11,7 @@ export function Counsel() {
         description="Four partners lead the practice. Each takes conferences personally, and each appears on the matters they accept."
       />
 
-      <div className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
+      <div className="mt-11 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
         {counsel.map((person) => (
           <article key={person.name} className="bg-bg p-8">
             <div className="flex items-start gap-5">
@@ -56,7 +56,7 @@ export function Matters() {
         description="Listed with client consent, and only where the matter is a matter of public record. Outcomes in past matters do not guarantee a similar result."
       />
 
-      <ol className="mt-14 divide-y divide-line border-y border-line">
+      <ol className="mt-11 divide-y divide-line border-y border-line">
         {matters.map((matter) => (
           <li key={matter.title} className="grid gap-4 py-8 sm:grid-cols-[7rem_1fr] sm:gap-10">
             <div>
@@ -83,7 +83,7 @@ export function ClientVoices() {
         title="Attributed as far as confidentiality allows"
       />
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-3">
+      <div className="mt-10 grid gap-10 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.quote.slice(0, 20)} className="border-t border-accent pt-6">
             <blockquote className="font-serif text-lg leading-relaxed text-brand-fg/90">

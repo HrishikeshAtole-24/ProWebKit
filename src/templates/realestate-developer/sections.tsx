@@ -67,7 +67,7 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-brand text-brand-fg">
       <div className="grid-lines absolute inset-0 opacity-[0.07]" aria-hidden />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{hero.eyebrow}</p>
 
@@ -123,7 +123,7 @@ export function Projects() {
         description="Price, size, possession date and RERA number on every card. If a figure is not here, ask and it will be — nothing about a home purchase should require a phone call to discover."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid gap-6 lg:grid-cols-2">
         {projects.map((project) => (
           <article
             key={project.name}
@@ -198,7 +198,7 @@ export function Configurations() {
         description="Built-up area is shown alongside for comparison. Prices exclude registration, stamp duty, GST and corpus, all of which are itemised in the cost sheet."
       />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[720px] text-left text-sm">
           <caption className="sr-only">Configurations, areas and price ranges</caption>
           <thead className="bg-subtle text-xs uppercase tracking-[0.12em] text-muted">
@@ -238,7 +238,7 @@ export function Amenities() {
         description="Clubhouse and common infrastructure are completed before the first family moves in, not two years after."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {amenities.map((group) => (
           <article key={group.group} className="bg-bg p-7">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
@@ -269,7 +269,7 @@ export function Construction() {
         description="Progress is measured against the approved construction programme, not against a marketing schedule. When something slips, it appears here first."
       />
 
-      <ul className="mt-12 space-y-5">
+      <ul className="mt-10 space-y-5">
         {construction.map((item) => (
           <li key={item.project} className="rounded-card border border-brand-fg/15 bg-brand-fg/[0.06] p-6">
             <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
@@ -303,7 +303,7 @@ export function Construction() {
 export function Why() {
   return (
     <Section id="why">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <SectionHeading
           eyebrow="Why Meridian"
           title="Four commitments, all of them checkable"
@@ -320,7 +320,7 @@ export function Why() {
         </div>
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+      <div className="mt-11 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.author} className="flex flex-col rounded-card bg-subtle p-7">
             <blockquote className="flex-1 text-sm leading-relaxed text-ink">
@@ -339,8 +339,8 @@ export function Why() {
 
 export function Legal() {
   return (
-    <Section id="legal" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <Section id="legal" tone="surface" space="compact">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="RERA & legal"
           title="Paperwork you can hand to your own lawyer"
@@ -365,7 +365,7 @@ export function Legal() {
 export function Visit() {
   return (
     <Section id="visit">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Before you book" />
           <Accordion items={faqs} className="mt-8" />

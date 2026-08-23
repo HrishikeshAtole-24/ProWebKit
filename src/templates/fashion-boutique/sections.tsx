@@ -65,8 +65,8 @@ export function Header() {
 export function Hero() {
   return (
     <section id="top" className="border-b border-line bg-subtle">
-      <Container className="py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <Container className="py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-sm bg-bg px-3 py-1.5 text-xs font-semibold text-brand">
               <Leaf className="h-3.5 w-3.5 text-accent" />
@@ -114,7 +114,7 @@ export function Drop() {
     <Section id="drop">
       <SectionHeading eyebrow="The current drop" title={drop.name} description={drop.note} />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {drop.pieces.map((piece) => (
           <article
             key={piece.name}
@@ -151,7 +151,7 @@ export function Fabric() {
     <Section id="fabric" tone="brand">
       <SectionHeading inverted eyebrow="Fabric & provenance" title={fabric.title} description={fabric.body} />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2">
         {fabric.sources.map((source) => (
           <article key={source.material} className="bg-brand p-7">
             <h3 className="text-base font-semibold text-brand-fg">{source.material}</h3>
@@ -176,7 +176,7 @@ export function Fabric() {
 export function MadeToOrder() {
   return (
     <Section id="made-to-order">
-      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionHeading eyebrow="Made to order" title={madeToOrder.title} description={madeToOrder.body} />
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -195,7 +195,7 @@ export function MadeToOrder() {
 export function Size() {
   return (
     <Section id="size" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Size guide"
@@ -248,14 +248,14 @@ export function Size() {
 
 export function Stockists() {
   return (
-    <Section id="stockists">
+    <Section id="stockists" space="compact">
       <SectionHeading
         eyebrow="Stockists"
         title="Where to try things on"
         description={label.hours}
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {stockists.map((stockist) => (
           <article key={stockist.name} className="bg-surface p-6">
             <div className="flex items-baseline justify-between gap-4">
@@ -275,7 +275,7 @@ export function Stockists() {
 export function Wholesale() {
   return (
     <Section id="wholesale" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Before you order" />
           <Accordion items={faqs} className="mt-8" />

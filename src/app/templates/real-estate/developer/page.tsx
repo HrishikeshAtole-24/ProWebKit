@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Amenities,
   Configurations,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function PropertyDeveloperTemplate() {
   return (
-    <div className="theme-realestate-developer bg-bg text-ink">
-      <PreviewBar template="Property Developer · Meridian Developers" />
+    <TemplateShell theme="theme-realestate-developer" preview="Property Developer · Meridian Developers">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function PropertyDeveloperTemplate() {
         <Visit />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

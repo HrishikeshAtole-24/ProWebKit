@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Anxious,
   Book,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function DentalStudioTemplate() {
   return (
-    <div className="theme-doctor-dental bg-bg text-ink">
-      <PreviewBar template="Dental Studio · Smile Studio Dental" />
+    <TemplateShell theme="theme-doctor-dental" preview="Dental Studio · Smile Studio Dental">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function DentalStudioTemplate() {
         <Book />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

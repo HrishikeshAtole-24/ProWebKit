@@ -47,7 +47,7 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #c7d2fe, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-20 sm:py-28">
+      <Container className="relative py-14 sm:py-20">
         <div className="mx-auto max-w-3xl animate-fade-up text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-bg px-3.5 py-1.5 text-xs font-semibold text-brand">
             <Sparkles className="h-3.5 w-3.5" />
@@ -102,7 +102,7 @@ export function Stack() {
         description="Not a menu you assemble. The whole finance function ships as one subscription, on a fixed calendar."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {stack.map(({ icon: Icon, title, description, points }) => (
           <article
             key={title}
@@ -140,7 +140,7 @@ export function Pricing() {
         description="No hourly billing, no per-filing surprises. Move up a plan when you raise, not when we feel like it."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-start">
         {pricing.map((plan) => (
           <article
             key={plan.name}
@@ -200,7 +200,7 @@ export function Pricing() {
 export function Diligence() {
   return (
     <Section id="diligence" tone="brand">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
         <SectionHeading inverted eyebrow="Diligence readiness" title={diligence.title} description={diligence.body} />
 
         <ul className="divide-y divide-brand-fg/15 overflow-hidden rounded-card border border-brand-fg/15">
@@ -221,7 +221,7 @@ export function Diligence() {
 
 export function Integrations() {
   return (
-    <Section id="integrations">
+    <Section id="integrations" space="compact">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <SectionHeading
           eyebrow="Integrations"
@@ -245,7 +245,7 @@ export function Customers() {
     <Section id="customers" tone="subtle">
       <SectionHeading align="center" eyebrow="Customers" title="Founders who stopped thinking about compliance" />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.author} className="flex flex-col rounded-card border border-line bg-bg p-7">
             <blockquote className="flex-1 text-sm leading-relaxed text-ink">
@@ -270,7 +270,7 @@ export function Customers() {
 export function Faq() {
   return (
     <Section id="faq">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading eyebrow="FAQ" title="The questions founders actually ask" />
         <Accordion items={faqs} />
       </div>

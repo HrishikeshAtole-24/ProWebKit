@@ -59,8 +59,8 @@ export function Header() {
 export function Hero() {
   return (
     <section id="top" className="border-b border-line bg-surface">
-      <Container className="py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <Container className="py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div className="animate-fade-up">
             <p className="text-xs uppercase tracking-[0.22em] text-accent">{hero.eyebrow}</p>
 
@@ -132,7 +132,7 @@ export function Matters() {
         description="The practice does not take corporate retainers or commercial arbitration. Every matter below involves an individual or a family."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {matters.map((matter) => (
           <article
             key={matter.title}
@@ -166,7 +166,7 @@ export function Process() {
         title="Four steps, and no surprises in any of them"
       />
 
-      <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {process.map((item, index) => (
           <li key={item.step} className="relative">
             {index < process.length - 1 ? (
@@ -187,7 +187,7 @@ export function Process() {
 export function About() {
   return (
     <Section id="about">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <SectionHeading eyebrow="About" title={`A note from ${advocate.name}`} />
           <div className="mt-6 space-y-4">
@@ -242,7 +242,7 @@ export function Fees() {
         description="Indicative figures excluding court fees and out-of-pocket expenses. Your engagement letter carries the precise number, agreed before anything is filed."
       />
 
-      <div className="mt-12 overflow-hidden rounded-card border border-brand-fg/15">
+      <div className="mt-10 overflow-hidden rounded-card border border-brand-fg/15">
         <table className="w-full text-left text-sm">
           <caption className="sr-only">Indicative fee schedule</caption>
           <thead className="bg-brand-fg/[0.08] text-xs uppercase tracking-[0.14em] text-brand-fg/60">
@@ -278,7 +278,7 @@ export function Fees() {
 export function Faq() {
   return (
     <Section id="faq">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading eyebrow="Questions" title="What clients ask before they call" />
         <Accordion items={faqs} />
       </div>
@@ -289,7 +289,7 @@ export function Faq() {
 export function Contact() {
   return (
     <Section id="contact" tone="subtle">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="Contact"

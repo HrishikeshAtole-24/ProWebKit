@@ -69,7 +69,7 @@ export function Hero() {
         }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="text-xs uppercase tracking-[0.2em] text-accent">{hero.eyebrow}</p>
 
@@ -126,7 +126,7 @@ export function Cost() {
         description="Published before design begins, because a fit-out budget approved on a vague per-square-foot rate is a budget that gets revised twice."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-start">
         {costTiers.map((tier) => (
           <article
             key={tier.tier}
@@ -187,7 +187,7 @@ export function Scope() {
         description="Design-and-build under a single agreement removes the gap between the drawing and the site, and removes the argument about who owns a discrepancy."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {scope.map((stage) => (
           <article key={stage.stage} className="bg-bg p-7">
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
@@ -212,7 +212,7 @@ export function Density() {
     <Section id="density">
       <SectionHeading eyebrow="Density & space standards" title={density.title} description={density.body} />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[720px] text-left text-sm">
           <caption className="sr-only">Space standards by workplace type</caption>
           <thead className="bg-subtle text-xs uppercase tracking-[0.12em] text-muted">
@@ -246,7 +246,7 @@ export function Phasing() {
     <Section id="phasing" tone="brand">
       <SectionHeading inverted eyebrow="Live-office phasing" title={phasing.title} description={phasing.body} />
 
-      <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {phasing.steps.map((step) => (
           <li key={step.phase} className="rounded-card border border-brand-fg/15 bg-brand-fg/[0.06] p-6">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
@@ -270,7 +270,7 @@ export function Projects() {
         description="Client names, photographs and references are shared under NDA at the pitch stage."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
           <article key={project.client + project.city} className="rounded-card border border-line bg-surface p-7">
             <div className="flex items-start justify-between gap-4">
@@ -305,8 +305,8 @@ export function Projects() {
 
 export function Sustainability() {
   return (
-    <Section id="sustainability" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <Section id="sustainability" tone="surface" space="compact">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Sustainability"
           title="Measured, not claimed"
@@ -331,7 +331,7 @@ export function Sustainability() {
 export function Brief() {
   return (
     <Section id="brief">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Asked by facilities and finance" />
           <Accordion items={faqs} className="mt-8" />

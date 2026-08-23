@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Enquiry,
   Footer,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function ArchitectureStudioTemplate() {
   return (
-    <div className="theme-architect-studio bg-bg text-ink">
-      <PreviewBar template="Architecture Studio · Terrain Studio" />
+    <TemplateShell theme="theme-architect-studio" preview="Architecture Studio · Terrain Studio">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function ArchitectureStudioTemplate() {
         <Enquiry />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

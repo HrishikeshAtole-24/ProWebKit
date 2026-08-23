@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Brief,
   Cost,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function WorkplaceDesignTemplate() {
   return (
-    <div className="theme-architect-workplace bg-bg text-ink">
-      <PreviewBar template="Workplace Design · Kernel Workspace" />
+    <TemplateShell theme="theme-architect-workplace" preview="Workplace Design · Kernel Workspace">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function WorkplaceDesignTemplate() {
         <Brief />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

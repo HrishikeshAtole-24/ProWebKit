@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Enquire,
   Faq,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function BoutiqueCaTemplate() {
   return (
-    <div className="theme-ca-boutique bg-bg text-ink">
-      <PreviewBar template="Boutique Tax Chamber · Kothari Tax Chambers" />
+    <TemplateShell theme="theme-ca-boutique" preview="Boutique Tax Chamber · Kothari Tax Chambers">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function BoutiqueCaTemplate() {
         <Enquire />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

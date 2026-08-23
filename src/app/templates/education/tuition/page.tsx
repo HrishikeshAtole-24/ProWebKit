@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Classes,
   Enrol,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function TuitionCentreTemplate() {
   return (
-    <div className="theme-education-tuition bg-bg text-ink">
-      <PreviewBar template="Tuition Centre · BrightMinds Tuition" />
+    <TemplateShell theme="theme-education-tuition" preview="Tuition Centre · BrightMinds Tuition">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function TuitionCentreTemplate() {
         <Enrol />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

@@ -59,11 +59,28 @@ Centres content with responsive gutters. `narrow` = 3xl, `default` = 6xl, `wide`
 ### `Section`
 
 ```tsx
-<Section id="services" tone="default" | "surface" | "subtle" | "brand" size="default">
+<Section
+  id="services"
+  tone="default" | "surface" | "subtle" | "brand"
+  space="default" | "compact" | "loose"
+  divider          // hairline above, for two same-tone sections in a row
+  noReveal         // opt out of the scroll entrance
+/>
 ```
 
-Vertical rhythm (`py-16 sm:py-24`), background tone, and a `Container` inside. `scroll-mt-20` is
-applied so anchor links clear the sticky header. `tone="brand"` also flips text to `text-brand-fg`.
+Background tone, vertical rhythm and a `Container` inside. `scroll-mt-16` plus
+`scroll-padding-top` on `html` means anchor links land below the sticky header.
+`tone="brand"` flips text to `text-brand-fg`.
+
+**Pick the right `space`.** `default` (`py-14 sm:py-20`) suits a section with cards or a table.
+`compact` (`py-10 sm:py-14`) is for structurally short sections — a chip list, a four-row table —
+which look padded-out at full height. `loose` is the old rhythm, for a section that is genuinely
+the centrepiece.
+
+Every `Section` also carries the `.reveal` class, which fades it up as it enters the viewport using
+a CSS scroll-driven animation. There is no JavaScript and no IntersectionObserver: the default
+state is fully visible and the animation only applies where `animation-timeline: view()` is
+supported and the viewer has not asked for reduced motion.
 
 ### `SectionHeading`
 
@@ -121,6 +138,20 @@ template (`ca-`, `dr-`, `law-`) so two forms on one page never collide.
 
 Native `<details>` / `<summary>`. No client JS, keyboard-accessible for free, and open by default
 when printed.
+
+## Long-page ergonomics
+
+A complete practice site is a tall page. Three shared pieces make that navigable:
+
+- **`ReadingProgress`** (`src/components/layout/reading-progress.tsx`) — a 2px accent rail showing
+  scroll position, plus a back-to-top control that appears after the first screen. One
+  rAF-throttled scroll listener drives both.
+- **Navbar scrollspy** — the header observes every `#section` target and underlines the one you
+  are in. On mobile the sheet numbers the sections and says how many there are.
+- **`.reveal`** — the scroll-driven section entrance described above.
+
+`TemplateShell` mounts the palette, the preview strip and `ReadingProgress` in one place, so a
+route file is just a theme name and a list of sections.
 
 ## Utilities
 

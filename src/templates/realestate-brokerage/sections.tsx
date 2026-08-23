@@ -64,7 +64,7 @@ export function Hero() {
         style={{ background: "radial-gradient(closest-side, #d9452f, transparent)" }}
         aria-hidden
       />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="inline-flex items-center gap-2 rounded-full border border-brand-fg/20 px-3 py-1 text-xs font-medium text-brand-fg/80">
             <BadgeCheck className="h-3.5 w-3.5 text-accent" />
@@ -123,7 +123,7 @@ export function Listings() {
         description="Verified within the last thirty days, with the owner met and the society position checked. Updated as things move."
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {listings.map((listing) => (
           <article
             key={listing.title}
@@ -187,7 +187,7 @@ export function Tracks() {
         description="A seller and a tenant need opposite things from a broker. Treating them the same is how most agencies end up serving neither well."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {tracks.map((track) => (
           <article key={track.audience} className="rounded-card border border-line bg-bg p-7">
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
@@ -218,7 +218,7 @@ export function Localities() {
         description="Ranges are from registered transactions over the last twelve months, not from listing portals. Portals show asking prices, which is a different number."
       />
 
-      <div className="mt-12 overflow-x-auto rounded-card border border-line">
+      <div className="mt-10 overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[760px] text-left text-sm">
           <caption className="sr-only">Locality price ranges and notes</caption>
           <thead className="bg-subtle text-xs uppercase tracking-[0.12em] text-muted">
@@ -252,7 +252,7 @@ export function Fee() {
     <Section id="fee" tone="brand">
       <SectionHeading inverted eyebrow="Our fee" title={fee.title} description={fee.body} />
 
-      <div className="mt-12 overflow-hidden rounded-card border border-brand-fg/15">
+      <div className="mt-10 overflow-hidden rounded-card border border-brand-fg/15">
         <table className="w-full text-left text-sm">
           <caption className="sr-only">Brokerage rates by service</caption>
           <thead className="bg-brand-fg/[0.08] text-xs uppercase tracking-[0.14em] text-brand-fg/60">
@@ -292,7 +292,7 @@ export function Fee() {
 export function Paperwork() {
   return (
     <Section id="paperwork">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Paperwork"
           title="The part that actually goes wrong"
@@ -320,12 +320,12 @@ export function Paperwork() {
 export function Enquire() {
   return (
     <Section id="enquire" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeading eyebrow="Questions" title="Before you call a broker" />
           <Accordion items={faqs} className="mt-8" />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure key={testimonial.author} className="rounded-card bg-subtle p-5">
                 <blockquote className="text-sm leading-relaxed text-ink">{testimonial.quote}</blockquote>

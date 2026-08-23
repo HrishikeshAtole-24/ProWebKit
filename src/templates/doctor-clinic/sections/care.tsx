@@ -12,7 +12,7 @@ export function Specialisations() {
         description="General medicine with a cardiology and metabolic focus. If a complaint needs a surgeon or a super-specialist, you will be told plainly and referred."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {specialisations.map(({ icon: Icon, title, description }) => (
           <article
             key={title}
@@ -39,7 +39,7 @@ export function Treatments() {
         description="Fewer referrals across the city means a diagnosis in one visit instead of three. Reports are read and explained by the same doctor who ordered them."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
         {treatments.map(({ icon: Icon, title, items }) => (
           <article key={title} className="rounded-card border border-line bg-bg p-7">
             <div className="flex items-center gap-3">

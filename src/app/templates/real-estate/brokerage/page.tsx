@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Enquire,
   Fee,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function BrokerageTemplate() {
   return (
-    <div className="theme-realestate-brokerage bg-bg text-ink">
-      <PreviewBar template="Property Brokerage · Anchor Property Advisors" />
+    <TemplateShell theme="theme-realestate-brokerage" preview="Property Brokerage · Anchor Property Advisors">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function BrokerageTemplate() {
         <Enquire />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

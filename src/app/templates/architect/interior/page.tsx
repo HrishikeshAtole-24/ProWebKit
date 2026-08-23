@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Consult,
   Footer,
@@ -26,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function InteriorDesignTemplate() {
   return (
-    <div className="theme-architect-interior bg-bg text-ink">
-      <PreviewBar template="Interior Design · Casa Interiors" />
+    <TemplateShell theme="theme-architect-interior" preview="Interior Design · Casa Interiors">
       <Header />
       <main>
         <Hero />
@@ -39,6 +38,6 @@ export default function InteriorDesignTemplate() {
         <Consult />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

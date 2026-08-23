@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PreviewBar } from "@/components/layout/preview-bar";
+import { TemplateShell } from "@/components/layout/template-shell";
 import {
   Contact,
   Faq,
@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 
 export default function CorporateLawTemplate() {
   return (
-    <div className="theme-lawyer-corporate bg-bg text-ink">
-      <PreviewBar template="Corporate & Technology · Sterling Legal" />
+    <TemplateShell theme="theme-lawyer-corporate" preview="Corporate & Technology · Sterling Legal">
       <Header />
       <main>
         <Hero />
@@ -41,6 +40,6 @@ export default function CorporateLawTemplate() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </TemplateShell>
   );
 }

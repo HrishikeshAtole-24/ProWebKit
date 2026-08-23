@@ -5,7 +5,7 @@ import { about, clinic, testimonials, timings } from "../content";
 export function About() {
   return (
     <Section id="about">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         {/* Portrait placeholder — swap the inner block for a real photograph */}
         <div className="relative">
           <div className="aspect-[4/5] overflow-hidden rounded-card border border-line bg-brand-soft">
@@ -136,7 +136,7 @@ export function PatientStories() {
         description="Shared with permission. Names shortened at the request of the patients."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure key={testimonial.author} className="flex flex-col rounded-card border border-line bg-surface p-7">
             <div className="flex gap-0.5 text-accent" aria-label="Rated 5 out of 5">

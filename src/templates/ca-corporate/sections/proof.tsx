@@ -13,7 +13,7 @@ export function Approach() {
         description="Onboarding is the part most firms improvise. Ours is written down, and you know what happens at each stage before you sign."
       />
 
-      <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {approach.map((item, index) => (
           <li key={item.step} className="relative">
             {/* Connector rail on wide screens */}
@@ -44,7 +44,7 @@ export function Partners() {
         description="Three engagement partners, each leading a vertical. No account manager layer between you and the person taking responsibility."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
         {partners.map((partner) => (
           <article
             key={partner.name}
@@ -90,7 +90,7 @@ export function Testimonials() {
         title="Judged on the year after the pitch"
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <figure
             key={testimonial.author}

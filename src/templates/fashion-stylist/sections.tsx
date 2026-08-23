@@ -60,8 +60,8 @@ export function Header() {
 export function Hero() {
   return (
     <section id="top" className="border-b border-line bg-subtle">
-      <Container className="py-16 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <Container className="py-14 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="animate-fade-up">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">{hero.eyebrow}</p>
 
@@ -88,7 +88,7 @@ export function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
+            <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-serif text-2xl font-semibold text-brand">{stat.value}</dt>
@@ -121,7 +121,7 @@ export function Services() {
         description="No retainers, no packages you have to grow into. Most people book the audit, take the gap list and are done for a year."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {services.map((service) => (
           <article
             key={service.name}
@@ -183,7 +183,7 @@ export function Process() {
         description="Plenty of clients take the gap list and shop themselves. That is a good outcome, not a lost sale."
       />
 
-      <ol className="mt-12 divide-y divide-line border-y border-line">
+      <ol className="mt-10 divide-y divide-line border-y border-line">
         {process.map((step) => (
           <li key={step.step} className="grid gap-3 py-6 lg:grid-cols-[3rem_1fr_9rem_1.4fr] lg:items-baseline lg:gap-8">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
@@ -204,7 +204,7 @@ export function Audit() {
     <Section id="audit" tone="brand">
       <SectionHeading inverted eyebrow="The wardrobe audit" title={audit.title} description={audit.body} />
 
-      <dl className="mt-12 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-10 grid gap-px overflow-hidden rounded-card border border-brand-fg/15 bg-brand-fg/15 sm:grid-cols-2 lg:grid-cols-4">
         {audit.findings.map((finding) => (
           <div key={finding.label} className="bg-brand p-7">
             <dt className="font-serif text-3xl font-semibold text-accent">{finding.stat}</dt>
@@ -216,7 +216,7 @@ export function Audit() {
         ))}
       </dl>
 
-      <h3 className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-brand-fg/55">
+      <h3 className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-brand-fg/55">
         What you can count on
       </h3>
       <ul className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -234,7 +234,7 @@ export function Audit() {
 export function Corporate() {
   return (
     <Section id="corporate">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <SectionHeading eyebrow="For companies" title={corporate.title} description={corporate.body} />
 
         <div className="grid gap-6 sm:grid-cols-3">
@@ -260,7 +260,7 @@ export function Clients() {
         title="Shared with permission, names shortened on request"
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3">
         {clients.map((client) => (
           <figure key={client.author} className="flex flex-col rounded-card border border-line bg-bg p-7">
             <blockquote className="flex-1 text-sm leading-[1.8] text-ink">{client.quote}</blockquote>
@@ -278,7 +278,7 @@ export function Clients() {
 export function Book() {
   return (
     <Section id="book">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div>
           <SectionHeading eyebrow="Questions" title="Asked before every first call" />
           <Accordion items={faqs} className="mt-8" />

@@ -89,7 +89,7 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-brand text-brand-fg">
       <div className="grid-lines absolute inset-0 opacity-[0.06]" aria-hidden />
-      <Container className="relative py-16 sm:py-24">
+      <Container className="relative py-14 sm:py-20">
         <div className="max-w-3xl animate-fade-up">
           <p className="inline-flex items-center gap-2 rounded-full border border-brand-fg/20 px-3 py-1 text-xs font-medium text-brand-fg/80">
             <BadgeCheck className="h-3.5 w-3.5 text-accent" />
@@ -151,7 +151,7 @@ export function Specialities() {
         description="Each centre runs its own consultant roster, dedicated theatre time and follow-up clinic, so a referral inside the hospital does not restart your case."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {specialities.map(({ icon: Icon, name, detail, consultants }) => (
           <article key={name} className="group bg-bg p-7 transition-colors hover:bg-surface">
             <span className="grid h-11 w-11 place-items-center rounded-card bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-brand-fg">
@@ -178,7 +178,7 @@ export function Doctors() {
         description="A selection of consultants and their outpatient timings. The full directory of 96 consultants is available at reception."
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {doctors.map((doctor) => (
           <article key={doctor.name} className="flex flex-col rounded-card border border-line bg-bg p-6">
             <div className="flex items-start gap-4">
@@ -225,7 +225,7 @@ export function Doctors() {
 export function Facilities() {
   return (
     <Section id="facilities">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
           eyebrow="Facilities"
           title="What is on site, and running tonight"
@@ -254,7 +254,7 @@ export function Packages() {
         description="Fasting required for all packages. Reports are issued the same evening with a consultation included."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-start">
         {packages.map((pack) => (
           <article
             key={pack.name}
@@ -301,7 +301,7 @@ export function Packages() {
 
 export function Insurance() {
   return (
-    <Section id="insurance" tone="brand">
+    <Section id="insurance" tone="brand" space="compact">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <SectionHeading
           inverted
@@ -323,12 +323,12 @@ export function Insurance() {
 
 export function Patients() {
   return (
-    <Section id="patients">
+    <Section id="patients" space="compact">
       <SectionHeading
         eyebrow="Patient information"
         title="What to expect, before you arrive"
       />
-      <dl className="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
+      <dl className="mt-10 grid gap-x-12 gap-y-8 sm:grid-cols-2">
         {patientInfo.map((info) => (
           <div key={info.title} className="border-t border-line pt-5">
             <dt className="text-base font-bold text-ink">{info.title}</dt>
@@ -343,7 +343,7 @@ export function Patients() {
 export function Appointment() {
   return (
     <Section id="appointment" tone="surface">
-      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <SectionHeading
             eyebrow="Appointments"
