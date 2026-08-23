@@ -55,8 +55,20 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
-      <body>{children}</body>
+    /*
+     * suppressHydrationWarning is scoped to <html> and <body> on purpose.
+     * Extensions such as Grammarly, password managers and theme add-ons
+     * inject attributes (data-gr-ext-installed, extra classnames) into these
+     * two elements before React hydrates, which React reports as a mismatch.
+     * The suppression only applies one level deep, so genuine mismatches
+     * anywhere inside the app are still reported.
+     */
+    <html
+      lang="en"
+      className={`${sans.variable} ${serif.variable}`}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
