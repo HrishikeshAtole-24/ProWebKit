@@ -12,9 +12,9 @@ import {
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
-import { TemplateCard } from "@/components/gallery/template-card";
+import { TemplateBrowser } from "@/components/gallery/template-browser";
 import { ReadingProgress } from "@/components/layout/reading-progress";
-import { categoryLabels, categoryOrder, templates, templatesByCategory } from "@/lib/registry";
+import { categoryOrder, templates } from "@/lib/registry";
 
 const REPO = "https://github.com/HrishikeshAtole-24/ProWebKit";
 
@@ -147,34 +147,15 @@ export default function HomePage() {
         </section>
 
         {/* Template library */}
-        <Section id="templates" className="border-b border-line/70">
+        <Section id="templates" noReveal className="border-b border-line/70">
           <SectionHeading
             eyebrow="The library"
             title="Pick a practice, get a complete site"
             description="Each template is a full, deployable page — not a hero section and three cards. Open one and scroll all the way to the footer."
           />
 
-          <div className="mt-12 space-y-16">
-            {categoryOrder.map((category) => {
-              const items = templatesByCategory(category);
-              return (
-                <div key={category}>
-                  <div className="mb-6 flex items-baseline justify-between gap-4 border-b border-line pb-3">
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
-                      {categoryLabels[category]}
-                    </h3>
-                    <span className="text-xs text-muted">
-                      {items.length} template{items.length === 1 ? "" : "s"}
-                    </span>
-                  </div>
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {items.map((template) => (
-                      <TemplateCard key={template.slug} template={template} />
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="mt-10">
+            <TemplateBrowser />
           </div>
         </Section>
 

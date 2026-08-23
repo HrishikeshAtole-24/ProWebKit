@@ -103,7 +103,8 @@ npm install
 npm run dev
 ```
 
-Open <http://localhost:3000> for the gallery, then click into any template.
+Open <http://localhost:3000> for the gallery. Use the **Profession** dropdown to filter the
+gallery down to one practice, then click into any template.
 
 | Script | Does |
 | --- | --- |
