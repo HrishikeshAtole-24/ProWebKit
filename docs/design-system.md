@@ -2,7 +2,7 @@
 
 Everything in `src/components/ui` is theme-agnostic: it reads colour, radius and typography from
 CSS variables, so the same component renders as navy-and-gold inside `.theme-ca`, ink-and-brass
-inside `.theme-lawyer` and near-black-and-blush inside `.theme-fashion-couture`. Seventeen
+inside `.theme-lawyer` and near-black-and-blush inside `.theme-fashion-couture`. Twenty-one
 templates share these primitives. This file documents the tokens and the primitive APIs.
 
 ## Tokens

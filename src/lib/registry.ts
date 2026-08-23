@@ -266,6 +266,30 @@ export const templates: TemplateMeta[] = [
     status: "stable",
   },
 
+  {
+    slug: "architect-workplace",
+    category: "architect",
+    name: "Workplace Design",
+    demoBrand: "Kernel Workspace",
+    description:
+      "Commercial office fit-out for companies — cost per seat, density planning, and phasing that keeps the office running while the work happens around it.",
+    href: "/templates/architect/workplace",
+    themeClass: "theme-architect-workplace",
+    swatch: ["#173F4F", "#4F7522"],
+    sections: [
+      "Navigation",
+      "Technical hero",
+      "Cost per seat",
+      "What we deliver",
+      "Density & space standards",
+      "Live-office phasing",
+      "Completed fit-outs",
+      "Sustainability",
+      "Brief enquiry",
+    ],
+    status: "stable",
+  },
+
   // ── Real estate & construction ─────────────────────────────────────
   {
     slug: "realestate-developer",
@@ -310,6 +334,30 @@ export const templates: TemplateMeta[] = [
       "Certifications",
       "Clients",
       "Tender enquiry",
+    ],
+    status: "stable",
+  },
+
+  {
+    slug: "realestate-brokerage",
+    category: "real-estate",
+    name: "Property Brokerage",
+    demoBrand: "Anchor Property Advisors",
+    description:
+      "A resale and rental brokerage — live listings, locality guides, published commission, and separate tracks for buyers, sellers, tenants and landlords.",
+    href: "/templates/real-estate/brokerage",
+    themeClass: "theme-realestate-brokerage",
+    swatch: ["#243B6B", "#D9452F"],
+    sections: [
+      "Navigation with search",
+      "Listing hero",
+      "Featured listings",
+      "Buy / rent / sell tracks",
+      "Locality guides",
+      "Commission, published",
+      "Paperwork handled",
+      "Client outcomes",
+      "Enquiry form",
     ],
     status: "stable",
   },
@@ -362,6 +410,30 @@ export const templates: TemplateMeta[] = [
     status: "stable",
   },
 
+  {
+    slug: "education-arts",
+    category: "education",
+    name: "Performing Arts Academy",
+    demoBrand: "Swaralaya Academy",
+    description:
+      "A music and dance academy — disciplines and instruments, graded examinations, teacher lineages, the annual recital, and fees per discipline.",
+    href: "/templates/education/arts",
+    themeClass: "theme-education-arts",
+    swatch: ["#7A2E4E", "#0E7C7B"],
+    sections: [
+      "Navigation",
+      "Recital hero",
+      "Disciplines & instruments",
+      "Graded examinations",
+      "Gurus & faculty",
+      "Class formats & fees",
+      "The annual recital",
+      "Student outcomes",
+      "Trial class form",
+    ],
+    status: "stable",
+  },
+
   // ── Fashion & design ───────────────────────────────────────────────
   {
     slug: "fashion-couture",
@@ -406,6 +478,30 @@ export const templates: TemplateMeta[] = [
       "Stockists",
       "Wholesale enquiry",
       "Newsletter",
+    ],
+    status: "stable",
+  },
+
+  {
+    slug: "fashion-stylist",
+    category: "fashion",
+    name: "Personal Stylist",
+    demoBrand: "Form & Figure",
+    description:
+      "Image consulting as a service, not a shop — wardrobe audits, personal shopping, corporate workshops, session pricing and a virtual option.",
+    href: "/templates/fashion/stylist",
+    themeClass: "theme-fashion-stylist",
+    swatch: ["#2B3A36", "#9C4A70"],
+    sections: [
+      "Navigation",
+      "Service hero",
+      "Services & session pricing",
+      "How a styling engagement runs",
+      "Wardrobe audit, explained",
+      "Corporate workshops",
+      "Client transformations",
+      "FAQ",
+      "Booking form",
     ],
     status: "stable",
   },

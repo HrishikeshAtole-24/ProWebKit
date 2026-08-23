@@ -411,3 +411,71 @@
   --pk-accent-soft: 250 237 225;
   --pk-accent-fg: 255 255 255;
 }
+
+/* Architect — workplace & commercial fit-out: petrol + olive, technical */
+.theme-architect-workplace {
+  --pk-radius: 0.5rem;
+  --pk-bg: 255 255 255;
+  --pk-surface: 246 249 250;
+  --pk-subtle: 237 243 245;
+  --pk-line: 216 228 232;
+  --pk-ink: 17 32 38;
+  --pk-muted: 94 114 122;
+  --pk-brand: 23 63 79;
+  --pk-brand-soft: 224 238 242;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 79 117 34;
+  --pk-accent-soft: 236 244 224;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Real estate — brokerage: indigo navy + coral, consumer-facing */
+.theme-realestate-brokerage {
+  --pk-radius: 0.75rem;
+  --pk-bg: 255 255 255;
+  --pk-surface: 248 249 253;
+  --pk-subtle: 240 242 250;
+  --pk-line: 221 226 241;
+  --pk-ink: 20 27 48;
+  --pk-muted: 100 110 138;
+  --pk-brand: 36 59 107;
+  --pk-brand-soft: 227 233 246;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 217 69 47;
+  --pk-accent-soft: 253 234 230;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Education — performing arts academy: plum + teal, warm and expressive */
+.theme-education-arts {
+  --pk-radius: 1rem;
+  --pk-bg: 253 251 252;
+  --pk-surface: 255 255 255;
+  --pk-subtle: 247 240 244;
+  --pk-line: 233 220 228;
+  --pk-ink: 38 24 32;
+  --pk-muted: 122 100 112;
+  --pk-brand: 122 46 78;
+  --pk-brand-soft: 246 232 239;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 14 124 123;
+  --pk-accent-soft: 223 244 243;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Fashion — personal stylist: evergreen charcoal + mauve, service-led */
+.theme-fashion-stylist {
+  --pk-radius: 0.625rem;
+  --pk-bg: 253 252 251;
+  --pk-surface: 255 255 255;
+  --pk-subtle: 244 243 240;
+  --pk-line: 228 226 220;
+  --pk-ink: 30 36 34;
+  --pk-muted: 112 118 114;
+  --pk-brand: 43 58 54;
+  --pk-brand-soft: 233 238 236;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 156 74 112;
+  --pk-accent-soft: 249 235 242;
+  --pk-accent-fg: 255 255 255;
+}

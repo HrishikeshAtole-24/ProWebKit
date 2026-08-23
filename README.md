@@ -2,7 +2,7 @@
 
 # ProWebKit
 
-**17 production-ready website templates for professionals — accountants, doctors, lawyers,
+**21 production-ready website templates for professionals — accountants, doctors, lawyers,
 architects, developers, coaching institutes and designers.**
 
 Built with Next.js 15 (App Router), TypeScript and Tailwind CSS. MIT licensed.
@@ -55,6 +55,7 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | --- | --- | --- | --- |
 | Architecture Studio | Terrain Studio | Monochrome, works index, practice statement | `/templates/architect/studio` |
 | Interior Design | Casa Interiors | Packages by home size, room by room, delay clause | `/templates/architect/interior` |
+| Workplace Design | Kernel Workspace | B2B office fit-out, cost per seat, live-office phasing | `/templates/architect/workplace` |
 
 ### Real Estate & Construction
 
@@ -62,6 +63,7 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | --- | --- | --- | --- |
 | Property Developer | Meridian Developers | Inventory cards, RERA numbers, construction progress | `/templates/real-estate/developer` |
 | Construction Company | Ironwood Constructions | B2B capability statement, plant register, safety record | `/templates/real-estate/construction` |
+| Property Brokerage | Anchor Property Advisors | Verified resale/rental listings, commission published | `/templates/real-estate/brokerage` |
 
 ### Education & Coaching
 
@@ -69,6 +71,7 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | --- | --- | --- | --- |
 | Competitive Coaching | Apex Academy | Results board, batch structure, scholarships | `/templates/education/coaching` |
 | Tuition Centre | BrightMinds Tuition | Parent-facing, weekly timetable, one monthly fee | `/templates/education/tuition` |
+| Performing Arts Academy | Swaralaya Academy | Disciplines, graded exams, guru lineage, annual recital | `/templates/education/arts` |
 
 ### Fashion & Design
 
@@ -76,6 +79,7 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | --- | --- | --- | --- |
 | Couture Atelier | Atelier Rhea | Editorial, collections, commission process | `/templates/fashion/couture` |
 | Boutique Label | Indigo Thread | Lookbook, fabric provenance, made-to-order | `/templates/fashion/boutique` |
+| Personal Stylist | Form & Figure | Styling as a service, wardrobe audit, session pricing | `/templates/fashion/stylist` |
 
 > All names, figures, credentials and testimonials in the demos are **fictional**. Replace them
 > before publishing anything.
@@ -125,7 +129,7 @@ src/
 │       ├── ca/corporate/page.tsx  # route: composes the template
 │       ├── doctor/dental/page.tsx
 │       ├── architect/studio/page.tsx
-│       └── …                      # 17 routes across 7 categories
+│       └── …                      # 21 routes across 7 categories
 │
 ├── components/
 │   ├── ui/                        # Button, Card, Section, Field, Accordion…
@@ -140,7 +144,7 @@ src/
 │   ├── ca-boutique/
 │   │   ├── content.ts
 │   │   └── sections.tsx           # smaller templates keep sections in one file
-│   └── …                          # 17 template folders
+│   └── …                          # 21 template folders
 │
 ├── lib/       # cn(), template registry
 └── types/     # shared TypeScript contracts
@@ -224,7 +228,7 @@ resolve correctly.
 
 ## Roadmap
 
-- [x] Multiple templates per profession — 17 across 7 categories
+- [x] Multiple templates per profession — 21 across 7 categories
 - [x] Architect, real estate, education and fashion categories
 - [ ] Photographer, restaurant, salon and fitness categories
 - [ ] Dark mode per template
