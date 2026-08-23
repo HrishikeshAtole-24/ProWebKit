@@ -1,8 +1,9 @@
 # Design system reference
 
 Everything in `src/components/ui` is theme-agnostic: it reads colour, radius and typography from
-CSS variables, so the same component renders as navy-and-gold inside `.theme-ca` and ink-and-brass
-inside `.theme-lawyer`. This file documents the tokens and the primitive APIs.
+CSS variables, so the same component renders as navy-and-gold inside `.theme-ca`, ink-and-brass
+inside `.theme-lawyer` and near-black-and-blush inside `.theme-fashion-couture`. Seventeen
+templates share these primitives. This file documents the tokens and the primitive APIs.
 
 ## Tokens
 
@@ -37,8 +38,13 @@ Two font variables set on `<html>` by `next/font` in `src/app/layout.tsx`:
 - `--pk-font-sans` → Plus Jakarta Sans → `font-sans` (default on `body`)
 - `--pk-font-serif` → Source Serif 4 → `font-serif`
 
-The CA and law-firm templates use `font-serif` for headings to read institutional; the clinic stays
-sans throughout to read approachable. Both fall back to system stacks.
+Serif headings read institutional and are used by the CA, law-firm, architecture and couture
+templates. Sans throughout reads approachable and is used by the clinic, coaching and startup
+templates. Both fall back to system stacks.
+
+Radius carries as much of the personality as colour does: `--pk-radius` runs from `0rem` in the
+architecture and couture templates through `0.25rem` for the law firm to `1.25rem` for the dental
+and tuition templates.
 
 ## Primitives
 
@@ -127,7 +133,11 @@ Defined in the `@layer utilities` block of `globals.css`:
 ## Conventions
 
 - **Section order carries meaning.** Lead with the conversion action for that profession: booking
-  for a clinic, consultation for a CA, enquiry for a law firm.
+  for a clinic, consultation for a CA, a site visit for a developer, a tender enquiry for a
+  contractor, a free demo class for a tuition centre.
+- **Publish the number.** Where a profession normally hides pricing, these templates publish it —
+  fee tables, treatment costs, package prices, construction budgets. It is the single strongest
+  differentiator available to a small practice, and it is baked into the content structure.
 - **No JSX edits for copy.** All strings live in `content.ts`. If you are editing a section file to
   change words, the string belongs in content.
 - **Icons are decorative.** Anything from `lucide-react` that sits beside a text label gets
