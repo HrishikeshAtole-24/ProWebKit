@@ -2,30 +2,65 @@
 
 # ProWebKit
 
-**21 production-ready website templates for professionals — accountants, doctors, lawyers,
-architects, developers, coaching institutes and designers.**
+### Digital presence for professionals and businesses.
 
-Built with Next.js 15 (App Router), TypeScript and Tailwind CSS. MIT licensed.
+**21 complete, production-ready websites for the professions that need credibility online
+and rarely get it** — accountants, doctors, lawyers, architects, property developers,
+coaching institutes and designers.
 
-[Templates](#templates) · [Quick start](#quick-start) · [Architecture](#architecture) · [Adding a template](#adding-a-template) · [Deploy](#deploy)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0f766e.svg?style=flat-square)](LICENSE)
+[![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Templates](https://img.shields.io/badge/templates-21-6366f1?style=flat-square)](#the-library)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#contributing)
+
+[**The library**](#the-library) · [**Quick start**](#quick-start) · [**Rebrand for a client**](#rebrand-for-a-client) · [**Architecture**](#architecture) · [**Deploy**](#deploy)
 
 </div>
 
 ---
 
-## Why this exists
+## The problem
 
-Professional practices need a serious web presence and rarely get one. The usual options are a
-drag-and-drop builder that looks like every other drag-and-drop builder, or a bespoke build that
-costs more than it should. ProWebKit is the middle path: complete, deployable sites you can fork,
-rebrand in one file and ship.
+A chartered accountant with twenty years of practice loses a client to a firm with a better
+website. A clinic has no way for a patient to check the timings at 11pm. A law firm's site was
+built in 2014 and opens with "Welcome to our website."
 
-Every template is a **full page** — hero to footer, with real content structure, working navigation,
-form markup and per-page SEO metadata. Not a hero section and three cards.
+The options are a drag-and-drop builder that looks like every other drag-and-drop builder, or a
+bespoke build that costs more than it should and takes six weeks. **ProWebKit is the middle
+path**: complete, deployable sites you fork, rebrand in one file, and ship.
 
-## Templates
+## What makes these different
 
-### Chartered Accountants
+Most template libraries give you a hero, three feature cards and a footer, and leave the actual
+website to you. Every ProWebKit template is a **finished page** — hero to footer — with content
+written for that specific profession.
+
+| | |
+|---|---|
+| **Built to get you contacted** | Each template is organised around one action — book the appointment, request the consultation, send the enquiry — repeated where a visitor is most likely to act. |
+| **Pricing in public** | Fee tables, treatment costs, package prices, per-seat rates, brokerage commission. Publishing the number most practices hide is the strongest trust signal a small firm has. |
+| **Credibility that reads as real** | Registration numbers, credentials, guru lineage, reported matters, delivery history, safety records — the specifics a client checks before calling. |
+| **Forms ready to wire up** | Semantic, labelled markup with correct field names and input types. Point it at a server action, Formspree or Resend. |
+| **Compliance built in** | ICAI advertising limits for accountants, Bar Council of India solicitation rules for advocates, emergency notices for clinics — written into the demos, not bolted on. |
+| **Found and shared** | Per-page `Metadata`, Open Graph tags, and a `sitemap.xml` / `robots.txt` generated from the template registry. |
+
+## Who it is for
+
+- **Practices and firms** — you need a credible site this month, not a six-week engagement.
+  Fork it, rewrite one file, deploy.
+- **Agencies and freelancers** — you build for the same professions repeatedly. One codebase,
+  one deploy, a new client in a day.
+- **Developers** — an opinionated, real-world Next.js reference: server components, token-based
+  theming, accessible patterns. MIT, no attribution required.
+
+## The library
+
+21 templates across 7 professions. Every one is a complete page and statically prerendered.
+
+<details open>
+<summary><b>Chartered Accountants</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
@@ -33,7 +68,10 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | Boutique Tax Chamber | Kothari Tax Chambers | Solo practitioner, letter-style, published fees | `/templates/ca/boutique` |
 | Startup CFO Desk | LedgerLab | Productised subscription with pricing tiers | `/templates/ca/startup` |
 
-### Doctors & Clinics
+</details>
+
+<details>
+<summary><b>Doctors & Clinics</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
@@ -41,7 +79,10 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | Dental Studio | Smile Studio Dental | Published treatment pricing, nervous patients | `/templates/doctor/dental` |
 | Multi-speciality Hospital | Sanjeevani Hospital | Emergency bar, departments, OPD directory | `/templates/doctor/hospital` |
 
-### Lawyers & Law Firms
+</details>
+
+<details>
+<summary><b>Lawyers & Law Firms</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
@@ -49,31 +90,43 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | Solo Advocate | Adv. Kavita Menon | Family & criminal, written for a client in distress | `/templates/lawyer/advocate` |
 | Corporate & Technology | Sterling Legal | Deal sheet, fixed-fee packages, turnaround commitments | `/templates/lawyer/corporate` |
 
-### Architects & Interiors
+</details>
+
+<details>
+<summary><b>Architects & Interiors</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
 | Architecture Studio | Terrain Studio | Monochrome, works index, practice statement | `/templates/architect/studio` |
 | Interior Design | Casa Interiors | Packages by home size, room by room, delay clause | `/templates/architect/interior` |
-| Workplace Design | Kernel Workspace | B2B office fit-out, cost per seat, live-office phasing | `/templates/architect/workplace` |
+| Workplace Design | Kernel Workspace | B2B fit-out, cost per seat, live-office phasing | `/templates/architect/workplace` |
 
-### Real Estate & Construction
+</details>
+
+<details>
+<summary><b>Real Estate & Construction</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
 | Property Developer | Meridian Developers | Inventory cards, RERA numbers, construction progress | `/templates/real-estate/developer` |
-| Construction Company | Ironwood Constructions | B2B capability statement, plant register, safety record | `/templates/real-estate/construction` |
-| Property Brokerage | Anchor Property Advisors | Verified resale/rental listings, commission published | `/templates/real-estate/brokerage` |
+| Construction Company | Ironwood Constructions | Capability statement, plant register, safety record | `/templates/real-estate/construction` |
+| Property Brokerage | Anchor Property Advisors | Verified listings, commission published | `/templates/real-estate/brokerage` |
 
-### Education & Coaching
+</details>
+
+<details>
+<summary><b>Education & Coaching</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
 | Competitive Coaching | Apex Academy | Results board, batch structure, scholarships | `/templates/education/coaching` |
 | Tuition Centre | BrightMinds Tuition | Parent-facing, weekly timetable, one monthly fee | `/templates/education/tuition` |
-| Performing Arts Academy | Swaralaya Academy | Disciplines, graded exams, guru lineage, annual recital | `/templates/education/arts` |
+| Performing Arts Academy | Swaralaya Academy | Disciplines, graded exams, guru lineage, recital | `/templates/education/arts` |
 
-### Fashion & Design
+</details>
+
+<details>
+<summary><b>Fashion & Design</b> — 3 templates</summary>
 
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
@@ -81,18 +134,11 @@ form markup and per-page SEO metadata. Not a hero section and three cards.
 | Boutique Label | Indigo Thread | Lookbook, fabric provenance, made-to-order | `/templates/fashion/boutique` |
 | Personal Stylist | Form & Figure | Styling as a service, wardrobe audit, session pricing | `/templates/fashion/stylist` |
 
-> All names, figures, credentials and testimonials in the demos are **fictional**. Replace them
-> before publishing anything.
+</details>
 
-Each template ships with:
-
-- Sticky navigation with a real mobile sheet
-- A hero built around that profession's actual conversion action
-- Service / practice-area sections with sector-specific copy
-- People sections (partners, doctor profile, counsel)
-- Social proof, FAQ and a complete contact or booking form
-- A profession-appropriate compliance note (ICAI advertising rules, medical emergency notice,
-  Bar Council of India solicitation rules)
+> [!IMPORTANT]
+> All names, figures, credentials, testimonials and results in the demos are **fictional**.
+> Replace them before publishing anything.
 
 ## Quick start
 
@@ -103,8 +149,8 @@ npm install
 npm run dev
 ```
 
-Open <http://localhost:3000> for the gallery. Use the **Profession** dropdown to filter the
-gallery down to one practice, then click into any template.
+Open <http://localhost:3000>, pick a profession from the **Profession** dropdown, and click into
+any template.
 
 | Script | Does |
 | --- | --- |
@@ -114,123 +160,149 @@ gallery down to one practice, then click into any template.
 | `npm run lint` | Next.js lint |
 | `npm run typecheck` | `tsc --noEmit` |
 
+## Rebrand for a client
+
+This is the whole workflow. It is four steps because the architecture was built to make it four
+steps.
+
+**1. Copy the template folder**
+
+```bash
+cp -r src/templates/doctor-clinic src/templates/client-clinic
+```
+
+**2. Rewrite `content.ts`** — every string on the page lives here. Name, services, people, fees,
+FAQs, contact details. No JSX edits.
+
+```ts
+export const clinic = {
+  name: "Aarogya Clinic",          // → your client
+  doctor: "Dr. Ananya Rao",
+  qualifications: "MBBS, MD (Internal Medicine)",
+  phone: "+91 80 4712 3300",
+  // …
+};
+```
+
+**3. Swap nine colours** in `src/app/globals.css`:
+
+```css
+.theme-doctor {
+  --pk-radius: 1rem;
+  --pk-brand: 13 115 108;    /* teal  → your brand colour  */
+  --pk-accent: 202 105 20;   /* amber → your action colour */
+  /* …six more */
+}
+```
+
+Every shared component re-skins itself. There is no second place to change.
+
+**4. Finish up** — replace the portrait and map placeholders (both marked in the JSX), point the
+form at a real handler, and drop the preview strip from `TemplateShell`.
+
 ## Architecture
 
 One Next.js app holds every template. Shared **primitives** keep the low-level UI consistent;
-each template composes its **own** sections so no two look like the same site reskinned.
+each template composes its **own** sections, so no two look like the same site reskinned.
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx                 # fonts, global metadata
-│   ├── page.tsx                   # the gallery
-│   ├── globals.css                # design tokens + theme classes
-│   ├── sitemap.ts / robots.ts
+│   ├── layout.tsx                  # fonts, global metadata
+│   ├── page.tsx                    # the gallery
+│   ├── globals.css                 # design tokens + one theme block per template
+│   ├── sitemap.ts / robots.ts      # generated from the registry
 │   └── templates/
-│       ├── ca/corporate/page.tsx  # route: composes the template
+│       ├── ca/corporate/page.tsx   # a route is a theme name + a list of sections
 │       ├── doctor/dental/page.tsx
-│       ├── architect/studio/page.tsx
-│       └── …                      # 21 routes across 7 categories
+│       └── …                       # 21 routes across 7 professions
 │
 ├── components/
-│   ├── ui/                        # Button, Card, Section, Field, Accordion…
-│   ├── layout/                    # Navbar, SiteFooter, PreviewBar
-│   └── gallery/                   # gallery-only components
+│   ├── ui/                         # Button, Card, Section, Field, Accordion…
+│   ├── layout/                     # Navbar, SiteFooter, TemplateShell, ReadingProgress
+│   └── gallery/                    # TemplateBrowser (profession filter), TemplateCard
 │
-├── templates/                     # one folder per template
+├── templates/                      # one folder per template
 │   ├── ca-corporate/
-│   │   ├── content.ts             # ALL copy and data
-│   │   ├── brand.tsx              # wordmark + header + footer wiring
-│   │   └── sections/              # bespoke sections, split when large
-│   ├── ca-boutique/
-│   │   ├── content.ts
-│   │   └── sections.tsx           # smaller templates keep sections in one file
-│   └── …                          # 21 template folders
+│   │   ├── content.ts              # ALL copy and data
+│   │   ├── brand.tsx               # wordmark + header + footer wiring
+│   │   └── sections/               # bespoke sections, split when large
+│   └── …                           # 21 template folders
 │
-├── lib/       # cn(), template registry
-└── types/     # shared TypeScript contracts
+├── lib/                            # cn(), the template registry
+└── types/                          # shared TypeScript contracts
 ```
 
 ### Theming
 
-A template's entire palette is nine CSS variables on a wrapper class. `src/app/globals.css`
-defines one `.theme-*` class per template (plus `.theme-kit` for the gallery); the route wraps the
-page in one of them and every shared component re-skins itself.
-
-```css
-.theme-ca {
-  --pk-radius: 0.75rem;
-  --pk-bg: 255 255 255;
-  --pk-ink: 15 27 45;
-  --pk-brand: 15 37 68;      /* navy */
-  --pk-accent: 176 138 60;   /* gold */
-  /* … */
-}
-```
-
 Colours are stored as `R G B` triplets so Tailwind opacity modifiers still work
-(`bg-brand/10`, `text-accent/70`). Tailwind maps them in `tailwind.config.ts`:
+(`bg-brand/10`, `text-accent/70`):
 
 ```ts
+// tailwind.config.ts
 brand: { DEFAULT: "rgb(var(--pk-brand) / <alpha-value>)", … }
 ```
 
-To rebrand a template for a client, change those variables — not forty components.
+A route wraps its page in one `.theme-*` class and everything underneath re-skins. That is why
+adding template number thirty costs about as much as template number three.
 
 ### Rendering
 
-Templates are React Server Components. The only client component is the navigation (it needs
-scroll state and a menu toggle). FAQ accordions use native `<details>`, so they work without
-hydration. No images ship with the templates: avatars are initials, and hero visuals are gradients
-and CSS grids, so there is nothing to compress and nothing to break.
+Templates are React Server Components. The only client JavaScript is the navigation, the reading
+progress rail and the gallery filter — FAQ accordions use native `<details>`, so they work
+without hydration. **No images ship with the templates**: avatars are initials and hero art is
+CSS, so there is nothing to compress and nothing to break.
 
-## Adding a template
+### Long-page ergonomics
 
-1. **Register it** in `src/lib/registry.ts` — slug, category, description, route, theme class,
-   swatch. The gallery, sitemap and docs all read from here.
-2. **Add a theme** in `src/app/globals.css` if the palette is new (`.theme-<name>`).
-3. **Create `src/templates/<slug>/`** with `content.ts` (all copy), `brand.tsx` (wordmark, header,
-   footer) and `sections/`.
-4. **Add the route** at `src/app/templates/<category>/<name>/page.tsx`: wrap in the theme class,
-   export `metadata`, compose the sections.
+A complete practice site is a tall page. Three shared pieces make it navigable:
 
-Reuse `@/components/ui` for anything generic. If you find yourself writing a third variant of a
-button, put it in the primitives instead.
-
-## Rebranding for a client
-
-1. Copy the template folder under `src/templates/`.
-2. Edit **`content.ts`** — firm name, services, people, testimonials, FAQs, contact details.
-3. Edit the theme block in `globals.css` — brand and accent colours, corner radius.
-4. Replace the portrait and map placeholders (both are clearly marked in the JSX).
-5. Point the forms at a real handler — a Next.js server action, Formspree, Resend, whatever.
-   Every form is plain semantic markup with `name` attributes already set.
-6. Delete `<PreviewBar />` from the route.
+- **Reading progress rail** and a back-to-top control
+- **Navbar scrollspy** — the header underlines the section you are in; the mobile sheet numbers
+  the sections and states how many there are
+- **Scroll-driven section entrance** via `animation-timeline: view()` — no JavaScript, visible by
+  default, and skipped under `prefers-reduced-motion`
 
 ## Accessibility
 
 - Semantic landmarks (`header`, `main`, `nav`, `footer`) and one `h1` per page
-- Every form control has an associated `<label>`; selects have a disabled placeholder option
+- Every form control has an associated `<label>`; selects carry a disabled placeholder option
+- The gallery filter is a real listbox — `aria-haspopup`, `aria-activedescendant`, arrow /
+  Home / End / Enter / Escape keys, outside-click dismiss, focus returned to the trigger
 - Visible focus rings via `:focus-visible`, never `outline: none` alone
 - `prefers-reduced-motion` disables animation and smooth scroll
 - Decorative icons are `aria-hidden`; tables carry captions and scoped headers
 
 ## Deploy
 
-The app is a stock Next.js project and deploys to Vercel with no configuration:
+A stock Next.js project — deploys to Vercel with no configuration:
 
 ```bash
 npm i -g vercel
 vercel
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to your production URL so `metadataBase`, `sitemap.xml` and `robots.txt`
-resolve correctly.
+Set `NEXT_PUBLIC_SITE_URL` to your production URL so `metadataBase`, `sitemap.xml` and
+`robots.txt` resolve correctly.
+
+## Adding a template
+
+1. **Register it** in `src/lib/registry.ts` — slug, category, description, route, theme class,
+   swatch. The gallery, sitemap and docs all read from here.
+2. **Add a theme block** in `src/app/globals.css` (`.theme-<name>`).
+3. **Create `src/templates/<slug>/`** with `content.ts`, and either `sections.tsx` or a
+   `sections/` folder.
+4. **Add the route** at `src/app/templates/<category>/<name>/page.tsx`: wrap in `TemplateShell`,
+   export `metadata`, compose the sections.
+
+Reuse `@/components/ui` for anything generic. If you find yourself writing a third variant of a
+button, it belongs in the primitives. See [`docs/design-system.md`](docs/design-system.md) for
+the token table and primitive APIs.
 
 ## Roadmap
 
 - [x] Multiple templates per profession — 21 across 7 categories
-- [x] Architect, real estate, education and fashion categories
+- [x] Profession filter on the gallery
 - [ ] Photographer, restaurant, salon and fitness categories
 - [ ] Dark mode per template
 - [ ] Working form submissions via server actions
@@ -238,17 +310,17 @@ resolve correctly.
 
 ## Contributing
 
-Issues and pull requests are welcome. If you are adding a template, follow the structure in
-[Adding a template](#adding-a-template) and keep the copy specific to the profession — generic
-lorem-ipsum templates are the thing this repo exists to replace.
+Issues and pull requests are welcome. If you are adding a template, follow the structure above
+and **keep the copy specific to the profession** — generic lorem-ipsum templates are the thing
+this repo exists to replace.
 
 ## Legal note
 
-The demo content includes profession-specific compliance notices because advertising by chartered
-accountants (ICAI) and advocates (Bar Council of India) is restricted, and medical sites carry
-duty-of-care expectations. Those notices are illustrative, **not legal advice** — have a
-professional in the relevant jurisdiction review any live site.
+The demo content includes profession-specific compliance notices because advertising by
+chartered accountants (ICAI) and advocates (Bar Council of India) is restricted, and medical
+sites carry duty-of-care expectations. Those notices are illustrative and **not legal advice** —
+have a professional in the relevant jurisdiction review any live site.
 
 ## License
 
-[MIT](LICENSE) © Hrishikesh Atole
+[MIT](LICENSE) © Hrishikesh Atole — no attribution required.

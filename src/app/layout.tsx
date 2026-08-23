@@ -19,33 +19,38 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prowebkit.vercel.ap
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ProWebKit — Website templates for professionals",
+    default: "ProWebKit — Digital presence for professionals and businesses",
     template: "%s · ProWebKit",
   },
   description:
-    "Production-ready, accessible Next.js website templates for chartered accountants, doctors and law firms. MIT licensed.",
+    "21 complete, production-ready websites for the professions that need credibility online — chartered accountants, doctors, lawyers, architects, property developers, coaching institutes and designers. Next.js, accessible, MIT licensed.",
   keywords: [
     "website templates",
     "Next.js templates",
+    "digital presence for professionals",
     "chartered accountant website",
     "doctor website template",
     "law firm website template",
+    "architect portfolio template",
+    "real estate website template",
+    "coaching institute website",
+    "small business website",
     "Tailwind CSS",
   ],
   authors: [{ name: "Hrishikesh Atole" }],
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "ProWebKit — Website templates for professionals",
+    title: "ProWebKit — Digital presence for professionals and businesses",
     description:
-      "Production-ready Next.js + Tailwind templates for CAs, doctors and law firms.",
+      "21 complete, production-ready websites across 7 professions. Fork it, rewrite one file, deploy.",
     siteName: "ProWebKit",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ProWebKit — Website templates for professionals",
+    title: "ProWebKit — Digital presence for professionals and businesses",
     description:
-      "Production-ready Next.js + Tailwind templates for CAs, doctors and law firms.",
+      "21 complete, production-ready websites across 7 professions. Fork it, rewrite one file, deploy.",
   },
 };
 
