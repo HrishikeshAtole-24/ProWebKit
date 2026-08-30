@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { categoryLabels, categoryOrder, templates, templatesByCategory } from "@/lib/registry";
@@ -15,13 +15,40 @@ interface Option {
   count: number;
 }
 
+/** Query parameter the selection is persisted in. */
+const PARAM = "profession";
+
+const DEFAULT_FILTER: Filter = categoryOrder[0];
+
+function isFilter(value: string | null): value is Filter {
+  return value === "all" || (categoryOrder as string[]).includes(value ?? "");
+}
+
+/** Read the selection out of the current URL. Safe to call on the server. */
+function filterFromLocation(): Filter {
+  if (typeof window === "undefined") return DEFAULT_FILTER;
+  const value = new URLSearchParams(window.location.search).get(PARAM);
+  return isFilter(value) ? value : DEFAULT_FILTER;
+}
+
+/**
+ * useLayoutEffect warns during server rendering, so fall back to useEffect
+ * there. The choice is made once per environment, never per render.
+ */
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 /**
  * The gallery is a dropdown and a grid, nothing else. Twenty-one templates
  * stacked in seven groups meant scrolling past six professions to reach the
  * one you came for, so only the selected profession is rendered.
+ *
+ * The selection lives in the URL (?profession=…) rather than in component
+ * state alone. Opening a template unmounts this component, so purely local
+ * state was lost on the way back; the browser restores the query string, so
+ * the choice survives back-navigation and the view is linkable.
  */
 export function TemplateBrowser() {
-  const [filter, setFilter] = useState<Filter>(categoryOrder[0]);
+  const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -46,6 +73,38 @@ export function TemplateBrowser() {
   const selected = options[selectedIndex] ?? options[0];
   const visible = filter === "all" ? templates : templatesByCategory(filter);
 
+  /**
+   * Adopt the URL selection before the browser paints, so returning from a
+   * template restores the profession without a frame of the default showing.
+   */
+  useIsomorphicLayoutEffect(() => {
+    setFilter(filterFromLocation());
+  }, []);
+
+  /** Back and forward within the gallery itself. */
+  useEffect(() => {
+    const onPopState = () => setFilter(filterFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const commit = useCallback((value: Filter) => {
+    setFilter(value);
+
+    // replaceState, not push: changing the filter should not bury the page
+    // the visitor arrived from under seven history entries.
+    const params = new URLSearchParams(window.location.search);
+    if (value === DEFAULT_FILTER) params.delete(PARAM);
+    else params.set(PARAM, value);
+
+    const query = params.toString();
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
+    );
+  }, []);
+
   // Close on outside click.
   useEffect(() => {
     if (!open) return;
@@ -65,7 +124,7 @@ export function TemplateBrowser() {
   }, [open, selectedIndex]);
 
   const choose = (value: Filter) => {
-    setFilter(value);
+    commit(value);
     setOpen(false);
     buttonRef.current?.focus();
   };
@@ -174,10 +233,7 @@ export function TemplateBrowser() {
                   >
                     <span className="flex min-w-0 items-center gap-2.5">
                       <Check
-                        className={cn(
-                          "h-3.5 w-3.5 shrink-0 text-accent",
-                          !isSelected && "opacity-0",
-                        )}
+                        className={cn("h-3.5 w-3.5 shrink-0 text-accent", !isSelected && "opacity-0")}
                         aria-hidden
                       />
                       <span className="truncate">{option.label}</span>
