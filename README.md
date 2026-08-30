@@ -9,7 +9,7 @@ and rarely get it** — accountants, doctors, lawyers, architects, property deve
 coaching institutes and designers.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-0f766e.svg?style=flat-square)](LICENSE)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=next.js)](https://nextjs.org)
+[![Next.js 15.5](https://img.shields.io/badge/Next.js-15.5-000000?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Templates](https://img.shields.io/badge/templates-21-6366f1?style=flat-square)](#the-library)
@@ -313,6 +313,20 @@ the token table and primitive APIs.
 Issues and pull requests are welcome. If you are adding a template, follow the structure above
 and **keep the copy specific to the profession** — generic lorem-ipsum templates are the thing
 this repo exists to replace.
+
+## Security
+
+`npm audit` reports **0 vulnerabilities**. Two things worth knowing if you fork this:
+
+- **`next` is kept on the latest 15.x patch.** Next.js ships security fixes often; 15.1.x carried
+  a critical middleware authorization bypass among others.
+- **There is a `postcss` override in `package.json`.** Next pins postcss to exactly `8.4.31`,
+  which carries sourceMappingURL path-traversal advisories. postcss is build-time only and never
+  reaches the browser, but the override lifts it tree-wide anyway. Remove it once Next ships a
+  patched pin.
+
+`eslint` is held at `^9` on purpose — `eslint-config-next` peer-caps at 9, so the deprecation
+warning npm prints for eslint 9.x is expected and not a vulnerability.
 
 ## Legal note
 
