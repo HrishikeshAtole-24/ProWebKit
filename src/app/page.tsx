@@ -1,185 +1,128 @@
 import Link from "next/link";
-import {
-  Accessibility,
-  ArrowRight,
-  Blocks,
-  Briefcase,
-  Building2,
-  CalendarCheck,
-  Gauge,
-  Github,
-  Palette,
-  PhoneCall,
-  Receipt,
-  Search,
-  Smartphone,
-  Sparkles,
-  UserRound,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Github } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Section, SectionHeading } from "@/components/ui/section";
-import { ButtonLink } from "@/components/ui/button";
 import { TemplateBrowser } from "@/components/gallery/template-browser";
 import { ReadingProgress } from "@/components/layout/reading-progress";
 import { categoryOrder, templates } from "@/lib/registry";
 
 const REPO = "https://github.com/HrishikeshAtole-24/ProWebKit";
 
-/** What a practice actually gets, framed as outcomes rather than components. */
+/** What a practice gets, as outcomes. Rendered as an editorial list. */
 const included = [
   {
-    icon: PhoneCall,
     title: "A page built to get you contacted",
-    description:
-      "Every template is organised around one action — book the appointment, request the consultation, send the enquiry — and repeats it where a visitor is most likely to act.",
+    body: "Each template is organised around one action — book the appointment, request the consultation, send the enquiry — repeated where a visitor is most likely to act.",
   },
   {
-    icon: Receipt,
     title: "Your pricing, in public",
-    description:
-      "Fee tables, treatment costs, package prices, commission rates. Publishing the number most practices hide is the strongest trust signal a small firm has.",
+    body: "Fee tables, treatment costs, package prices, per-seat rates, brokerage commission. Publishing the number most practices hide is the strongest trust signal a small firm has.",
   },
   {
-    icon: UserRound,
     title: "Credibility that reads as real",
-    description:
-      "Credentials, registration numbers, lineage, case records, delivery history — the specifics a client checks before they pick up the phone.",
+    body: "Registration numbers, credentials, guru lineage, reported matters, delivery history, safety records — the specifics a client checks before they call.",
   },
   {
-    icon: CalendarCheck,
     title: "Forms ready to wire up",
-    description:
-      "Semantic, labelled markup with the right field names and input types. Point it at a server action, Formspree or Resend and it works.",
+    body: "Semantic, labelled markup with correct field names and input types. Point it at a server action, Formspree or Resend and it works.",
   },
   {
-    icon: Search,
     title: "Found on search, shared cleanly",
-    description:
-      "Per-page titles, descriptions and Open Graph tags written for the profession, plus a sitemap and robots.txt generated from the registry.",
+    body: "Per-page titles, descriptions and Open Graph tags written for the profession, plus a sitemap and robots.txt generated from the registry.",
   },
   {
-    icon: Accessibility,
     title: "Compliance notes where they matter",
-    description:
-      "ICAI advertising limits for accountants, Bar Council solicitation rules for advocates, emergency notices for clinics — written into the demos, not bolted on.",
+    body: "ICAI advertising limits for accountants, Bar Council solicitation rules for advocates, emergency notices for clinics — written into the demos, not bolted on.",
   },
 ];
 
-/** Who the kit is for. */
 const audiences = [
   {
-    icon: Briefcase,
     who: "Practices & firms",
-    body: "A chartered accountant, doctor, advocate or architect who needs a credible site this month, not a six-week agency engagement.",
-    detail: "Fork it, rewrite one file, deploy.",
+    body: "An accountant, doctor, advocate or architect who needs a credible site this month, not a six-week engagement.",
+    outcome: "Fork it, rewrite one file, deploy.",
   },
   {
-    icon: Building2,
     who: "Agencies & freelancers",
-    body: "Studios building client sites repeatedly for the same professions, tired of rebuilding the same appointment card and fee table.",
-    detail: "One codebase, one deploy, a new client in a day.",
+    body: "Studios building for the same professions repeatedly, tired of rebuilding the same appointment card and fee table.",
+    outcome: "One codebase, a new client in a day.",
   },
   {
-    icon: Blocks,
     who: "Developers",
-    body: "Anyone who wants a real, opinionated Next.js reference — server components, token theming, accessible patterns — instead of another dashboard demo.",
-    detail: "MIT licensed, no attribution required.",
-  },
-];
-
-/** Engineering credibility, kept after the product story rather than before it. */
-const engineering = [
-  {
-    icon: Palette,
-    title: "Nine variables per brand",
-    description:
-      "A template palette is nine CSS custom properties on a wrapper class. Rebranding is one block of CSS, not forty component edits.",
-  },
-  {
-    icon: Blocks,
-    title: "Shared primitives, distinct designs",
-    description:
-      "Buttons, sections and forms come from one set of primitives, but every template composes its own sections — so no two look reskinned.",
-  },
-  {
-    icon: Gauge,
-    title: "Server-rendered, near-zero JS",
-    description:
-      "Templates are React Server Components. Only navigation and the gallery filter ship client JS; FAQs use native details elements.",
-  },
-  {
-    icon: Smartphone,
-    title: "Responsive to 320px",
-    description:
-      "Mobile-first layouts with a real navigation sheet and a numbered section index, not a desktop grid squeezed down.",
+    body: "An opinionated Next.js reference — server components, token theming, accessible patterns — instead of another dashboard demo.",
+    outcome: "MIT, no attribution required.",
   },
 ];
 
 const steps = [
-  {
-    number: "01",
-    title: "Pick the practice",
-    body: "Choose a profession in the gallery and open the template. Every one is a complete page, hero to footer.",
-  },
-  {
-    number: "02",
-    title: "Rewrite one file",
-    body: "All copy lives in that template's content.ts — name, services, people, fees, FAQs, contact details. No JSX edits.",
-  },
-  {
-    number: "03",
-    title: "Swap nine colours",
-    body: "Change the theme block in globals.css to the client's brand and every shared component re-skins itself.",
-  },
-  {
-    number: "04",
-    title: "Deploy",
-    body: "It is a stock Next.js app. Push to Vercel, set NEXT_PUBLIC_SITE_URL, and the sitemap resolves itself.",
-  },
+  { n: "01", title: "Pick the practice", body: "Choose a profession and open the template. Every one is a complete page." },
+  { n: "02", title: "Rewrite one file", body: "All copy lives in that template's content.ts. No JSX edits." },
+  { n: "03", title: "Swap nine colours", body: "Change the theme block and every shared component re-skins itself." },
+  { n: "04", title: "Deploy", body: "A stock Next.js app. Push to Vercel and the sitemap resolves itself." },
+];
+
+const engineering = [
+  { k: "Theming", v: "Nine CSS custom properties per brand. Rebranding is one block of CSS, not forty component edits." },
+  { k: "Composition", v: "Shared primitives, but each template composes its own sections — so no two look reskinned." },
+  { k: "Rendering", v: "React Server Components. Only navigation and this filter ship client JS; FAQs use native details." },
+  { k: "Responsive", v: "Mobile-first to 320px, with a real navigation sheet and a numbered section index." },
 ];
 
 const stats: Array<[string, string]> = [
-  [String(templates.length), "Ready templates"],
-  [String(categoryOrder.length), "Professions covered"],
-  ["100%", "TypeScript · MIT"],
+  [String(templates.length), "Templates"],
+  [String(categoryOrder.length), "Professions"],
+  ["MIT", "Licence"],
 ];
+
+/** Small letterspaced caps used to open each section. */
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="kit-label flex items-center gap-3 text-muted">
+      <span aria-hidden className="h-px w-6 bg-line" />
+      {children}
+    </p>
+  );
+}
 
 export default function HomePage() {
   return (
-    <div className="theme-kit min-h-screen bg-bg text-ink">
+    <div className="theme-kit min-h-screen bg-bg text-ink antialiased">
       <ReadingProgress />
 
-      <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur-md">
-        <Container className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand text-brand-fg">
-              <Sparkles className="h-4 w-4" />
+      <header className="sticky top-0 z-50 border-b border-line/80 bg-bg/80 backdrop-blur-xl">
+        <Container size="wide" className="flex h-16 items-center justify-between">
+          <Link href="/" className="group flex items-center gap-2.5">
+            <span
+              aria-hidden
+              className="grid h-7 w-7 place-items-center rounded-md bg-ink text-[13px] font-bold leading-none text-bg"
+            >
+              P
             </span>
-            ProWebKit
+            <span className="text-[15px] font-semibold tracking-[-0.01em]">ProWebKit</span>
           </Link>
-          <nav className="flex items-center gap-1 text-sm" aria-label="Primary">
-            <Link href="#templates" className="rounded-card px-3 py-2 text-muted hover:text-ink">
-              Templates
-            </Link>
-            <Link
-              href="#included"
-              className="hidden rounded-card px-3 py-2 text-muted hover:text-ink sm:block"
-            >
-              What you get
-            </Link>
-            <Link
-              href="#start"
-              className="hidden rounded-card px-3 py-2 text-muted hover:text-ink sm:block"
-            >
-              How it works
-            </Link>
+
+          <nav className="flex items-center gap-1" aria-label="Primary">
+            {[
+              ["Templates", "#templates"],
+              ["What you get", "#included"],
+              ["How it works", "#start"],
+            ].map(([label, href], index) => (
+              <Link
+                key={href}
+                href={href}
+                className={`rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-ink ${
+                  index > 0 ? "hidden sm:block" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
             <Link
               href={REPO}
               target="_blank"
               rel="noreferrer"
-              className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-card border border-line px-3 font-medium transition hover:border-accent hover:text-accent"
+              className="ml-2 inline-flex h-8 items-center gap-1.5 rounded-md border border-line px-3 text-sm text-ink transition-colors hover:border-muted/60"
             >
-              <Github className="h-4 w-4" />
+              <Github className="h-3.5 w-3.5" />
               GitHub
             </Link>
           </nav>
@@ -187,173 +130,242 @@ export default function HomePage() {
       </header>
 
       <main>
-        {/* Hero */}
-        <section className="relative overflow-hidden border-b border-line/70">
-          <div className="dot-grid absolute inset-0 opacity-50" aria-hidden />
-          <div
-            className="absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
-            style={{ background: "radial-gradient(closest-side, #6366f1, transparent)" }}
-            aria-hidden
-          />
-          <Container className="relative py-20 sm:py-28">
-            <div className="max-w-3xl animate-fade-up">
-              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                {templates.length} templates · {categoryOrder.length} professions · MIT licensed
-              </span>
-
-              <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
-                Digital presence for
-                <br />
-                <span className="text-muted">professionals and businesses.</span>
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                Most practices are one badly-built website away from losing a client who was ready
-                to call. ProWebKit is a library of complete, production-ready sites for the
-                professions that need credibility online and rarely get it — accountants, doctors,
-                lawyers, architects, developers, coaching institutes and designers.
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden border-b border-line">
+          <div className="kit-grid pointer-events-none absolute inset-0" aria-hidden />
+          <Container size="wide" className="relative pb-20 pt-24 sm:pb-28 sm:pt-32">
+            <div className="animate-fade-up">
+              <p className="kit-label flex items-center gap-2.5 text-muted">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {templates.length} templates · {categoryOrder.length} professions · open source
               </p>
 
-              <div className="mt-9 flex flex-wrap gap-3">
-                <ButtonLink href="#templates" variant="primary" size="lg">
+              <h1 className="mt-8 max-w-[19ch] text-[2.75rem] font-semibold leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+                Digital presence for professionals and businesses.
+              </h1>
+
+              <p className="mt-7 max-w-xl text-[17px] leading-[1.65] text-muted">
+                Most practices are one badly-built website away from losing a client who was ready
+                to call. ProWebKit is a library of complete, production-ready sites for the
+                professions that need credibility online and rarely get it.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <Link
+                  href="#templates"
+                  className="group inline-flex h-11 items-center gap-2 rounded-md bg-ink px-5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+                >
                   Browse the library
-                  <ArrowRight className="h-4 w-4" />
-                </ButtonLink>
-                <ButtonLink href={REPO} target="_blank" rel="noreferrer" variant="outline" size="lg">
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  href={REPO}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-11 items-center gap-2 rounded-md border border-line px-5 text-sm font-medium text-ink transition-colors hover:border-muted/60"
+                >
                   <Github className="h-4 w-4" />
-                  View on GitHub
-                </ButtonLink>
+                  View source
+                </Link>
+              </div>
+            </div>
+          </Container>
+
+          {/* Stat rail — hairline separated, tabular figures */}
+          <div className="relative border-t border-line">
+            <Container size="wide">
+              <dl className="grid grid-cols-3 divide-x divide-line">
+                {stats.map(([value, label], index) => (
+                  <div key={label} className={index === 0 ? "py-6 pr-6" : "px-6 py-6"}>
+                    <dt className="text-2xl font-medium tabular-nums tracking-[-0.02em]">{value}</dt>
+                    <dd className="kit-label mt-2 text-muted">{label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Container>
+          </div>
+        </section>
+
+        {/* ── Library ──────────────────────────────────────────── */}
+        <section id="templates" className="scroll-mt-16 border-b border-line py-20 sm:py-28">
+          <Container size="wide">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-xl">
+                <Eyebrow>The library</Eyebrow>
+                <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] sm:text-[2.5rem] sm:leading-[1.05]">
+                  Pick a profession, get a finished site
+                </h2>
+              </div>
+              <p className="max-w-md text-[15px] leading-relaxed text-muted">
+                Each template is a complete, deployable page — hero to footer, with real content
+                structure, working navigation and forms ready to wire up.
+              </p>
+            </div>
+
+            <div className="mt-12">
+              <TemplateBrowser />
+            </div>
+          </Container>
+        </section>
+
+        {/* ── What you get — editorial list, no cards ──────────── */}
+        <section id="included" className="scroll-mt-16 border-b border-line py-20 sm:py-28">
+          <Container size="wide">
+            <div className="grid gap-12 lg:grid-cols-[22rem_1fr] lg:gap-20">
+              <div className="lg:sticky lg:top-28 lg:self-start">
+                <Eyebrow>What you get</Eyebrow>
+                <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] sm:text-[2.25rem] sm:leading-[1.08]">
+                  Written for the client, not for the portfolio
+                </h2>
+                <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  The demo copy is specific to each profession, because generic copy is exactly what
+                  makes most professional websites forgettable.
+                </p>
               </div>
 
-              <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-line pt-8">
-                {stats.map(([value, label]) => (
-                  <div key={label}>
-                    <dt className="text-2xl font-semibold text-ink">{value}</dt>
-                    <dd className="mt-1 text-sm text-muted">{label}</dd>
+              <ol className="-mt-6">
+                {included.map((item, index) => (
+                  <li
+                    key={item.title}
+                    className="grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-line py-6 last:border-0 sm:gap-x-8"
+                  >
+                    <span className="pt-1 text-sm tabular-nums text-muted">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-[17px] font-medium tracking-[-0.01em]">{item.title}</h3>
+                      <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted">
+                        {item.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </Container>
+        </section>
+
+        {/* ── Who it is for — three columns, rules not boxes ───── */}
+        <section id="who" className="scroll-mt-16 border-b border-line py-20 sm:py-24">
+          <Container size="wide">
+            <Eyebrow>Who it is for</Eyebrow>
+            <div className="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {audiences.map((item) => (
+                <div key={item.who} className="border-t border-ink/25 pt-6">
+                  <h3 className="text-[17px] font-medium tracking-[-0.01em]">{item.who}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-muted">{item.body}</p>
+                  <p className="mt-5 text-[15px] text-accent">{item.outcome}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* ── How it works — stepper rail + terminal ───────────── */}
+        <section id="start" className="scroll-mt-16 border-b border-line py-20 sm:py-28">
+          <Container size="wide">
+            <div className="max-w-xl">
+              <Eyebrow>How it works</Eyebrow>
+              <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] sm:text-[2.25rem] sm:leading-[1.08]">
+                A client site in an afternoon
+              </h2>
+            </div>
+
+            <ol className="mt-12 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {steps.map((step) => (
+                <li key={step.n} className="kit-edge bg-surface p-6">
+                  <span className="text-sm tabular-nums text-accent">{step.n}</span>
+                  <h3 className="mt-4 text-[15px] font-medium tracking-[-0.01em]">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-6 overflow-hidden rounded-lg border border-line bg-surface">
+              <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
+                <span className="kit-label text-muted">Terminal</span>
+                <span className="kit-label text-muted">bash</span>
+              </div>
+              <pre className="overflow-x-auto px-5 py-4 font-mono text-[13px] leading-[1.9] text-muted">
+                <code>
+                  <span className="select-none text-muted">$ </span>
+                  git clone {REPO}.git{"\n"}
+                  <span className="select-none text-muted">$ </span>cd ProWebKit{"\n"}
+                  <span className="select-none text-muted">$ </span>npm install{"\n"}
+                  <span className="select-none text-muted">$ </span>
+                  <span className="text-ink">npm run dev</span>
+                  {"\n\n"}
+                  <span className="text-muted"># http://localhost:3000</span>
+                </code>
+              </pre>
+            </div>
+          </Container>
+        </section>
+
+        {/* ── Built properly — definition list, small type ─────── */}
+        <section className="py-20 sm:py-24">
+          <Container size="wide">
+            <div className="grid gap-12 lg:grid-cols-[22rem_1fr] lg:gap-20">
+              <div>
+                <Eyebrow>Built properly</Eyebrow>
+                <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] sm:text-[2.25rem] sm:leading-[1.08]">
+                  Opinionated where it saves you time
+                </h2>
+                <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  One app, one design system, one deploy — so template number thirty costs about as
+                  much to add as template number three.
+                </p>
+              </div>
+
+              <dl className="-mt-5">
+                {engineering.map((item) => (
+                  <div
+                    key={item.k}
+                    className="grid gap-1 border-b border-line py-5 last:border-0 sm:grid-cols-[9rem_1fr] sm:gap-8"
+                  >
+                    <dt className="kit-label pt-1 text-muted">{item.k}</dt>
+                    <dd className="max-w-2xl text-[15px] leading-relaxed text-ink/85">{item.v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
           </Container>
         </section>
-
-        {/* Template library */}
-        <Section id="templates" noReveal className="border-b border-line/70">
-          <SectionHeading
-            eyebrow="The library"
-            title="Pick a profession, get a finished site"
-            description="Each template is a complete, deployable page — hero to footer, with real content structure, working navigation and forms ready to wire up. Not a hero section and three cards."
-          />
-
-          <div className="mt-10">
-            <TemplateBrowser />
-          </div>
-        </Section>
-
-        {/* What every template includes */}
-        <Section id="included" className="border-b border-line/70">
-          <SectionHeading
-            eyebrow="What you get"
-            title="Written for the client, not for the portfolio"
-            description="The demo copy is specific to each profession, because generic copy is exactly what makes most professional websites forgettable."
-          />
-          <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {included.map(({ icon: Icon, title, description }) => (
-              <div key={title} className="bg-bg p-7">
-                <Icon className="h-5 w-5 text-accent" />
-                <h3 className="mt-4 font-semibold text-ink">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* Audiences */}
-        <Section id="who" className="border-b border-line/70">
-          <SectionHeading eyebrow="Who it is for" title="Three kinds of people use this" />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {audiences.map(({ icon: Icon, who, body, detail }) => (
-              <article key={who} className="rounded-card border border-line bg-surface p-7">
-                <Icon className="h-5 w-5 text-accent" />
-                <h3 className="mt-4 text-lg font-semibold text-ink">{who}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-                <p className="mt-4 border-t border-line pt-4 text-sm font-medium text-accent">
-                  {detail}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        {/* How it works */}
-        <Section id="start" className="border-b border-line/70">
-          <SectionHeading
-            eyebrow="How it works"
-            title="A client site in an afternoon"
-            description="The architecture exists to make this four steps rather than a rebuild. Copy lives in one file per template; the palette lives in one CSS block."
-          />
-
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <ol className="grid gap-6 sm:grid-cols-2">
-              {steps.map((step) => (
-                <li key={step.number} className="rounded-card border border-line bg-surface p-6">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                    {step.number}
-                  </span>
-                  <h3 className="mt-3 font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
-                </li>
-              ))}
-            </ol>
-
-            <div className="overflow-hidden rounded-card border border-line bg-surface">
-              <div className="flex items-center gap-1.5 border-b border-line px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-                <span className="ml-2 text-xs text-muted">terminal</span>
-              </div>
-              <pre className="overflow-x-auto p-5 text-sm leading-relaxed text-muted">
-                <code>{`git clone ${REPO}.git
-cd ProWebKit
-npm install
-npm run dev
-
-# open http://localhost:3000`}</code>
-              </pre>
-            </div>
-          </div>
-        </Section>
-
-        {/* Engineering */}
-        <Section id="engineering">
-          <SectionHeading
-            eyebrow="Built properly"
-            title="Opinionated where it saves you time"
-            description="One app, one design system, one deploy — so template number thirty costs about as much to add as template number three."
-          />
-          <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {engineering.map(({ icon: Icon, title, description }) => (
-              <div key={title} className="bg-bg p-7">
-                <Icon className="h-5 w-5 text-accent" />
-                <h3 className="mt-4 font-semibold text-ink">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
       </main>
 
-      <footer className="border-t border-line/70">
-        <Container className="flex flex-col gap-3 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            ProWebKit — MIT licensed. Demo names, figures, credentials and testimonials are
-            fictional.
+      <footer className="border-t border-line">
+        <Container size="wide" className="py-10">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <div className="flex items-center gap-2.5">
+                <span
+                  aria-hidden
+                  className="grid h-6 w-6 place-items-center rounded bg-ink text-[11px] font-bold leading-none text-bg"
+                >
+                  P
+                </span>
+                <span className="text-sm font-semibold tracking-[-0.01em]">ProWebKit</span>
+              </div>
+              <p className="mt-3 max-w-sm text-[13px] leading-relaxed text-muted">
+                Complete, production-ready websites for professionals and businesses. Demo names,
+                figures, credentials and testimonials are fictional.
+              </p>
+            </div>
+
+            <Link
+              href={REPO}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-1.5 text-[13px] text-muted transition-colors hover:text-ink"
+            >
+              github.com/HrishikeshAtole-24/ProWebKit
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+
+          <p className="kit-label mt-10 border-t border-line pt-6 text-muted">
+            MIT licensed · {new Date().getFullYear()}
           </p>
-          <Link href={REPO} target="_blank" rel="noreferrer" className="hover:text-ink">
-            github.com/HrishikeshAtole-24/ProWebKit
-          </Link>
         </Container>
       </footer>
     </div>

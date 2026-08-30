@@ -126,15 +126,15 @@ export function TemplateBrowser() {
             aria-controls={open ? listboxId : undefined}
             aria-labelledby={`${listboxId}-label`}
             className={cn(
-              "inline-flex h-12 min-w-[16rem] items-center justify-between gap-4 rounded-card border bg-surface px-4 text-left transition",
-              open ? "border-accent" : "border-line hover:border-accent",
+              "inline-flex h-11 min-w-[15rem] items-center justify-between gap-4 rounded-md border bg-surface px-3.5 text-left transition-colors",
+              open ? "border-muted/60" : "border-line hover:border-muted/50",
             )}
           >
-            <span className="min-w-0">
-              <span className="block text-[10px] uppercase tracking-[0.18em] text-muted">
-                Profession
+            <span className="flex min-w-0 items-baseline gap-2.5">
+              <span className="kit-label shrink-0 text-muted">Profession</span>
+              <span className="truncate text-sm font-medium tracking-[-0.01em] text-ink">
+                {selected.label}
               </span>
-              <span className="block truncate text-sm font-semibold text-ink">{selected.label}</span>
             </span>
             <ChevronDown
               className={cn(
@@ -154,7 +154,7 @@ export function TemplateBrowser() {
               aria-labelledby={`${listboxId}-label`}
               aria-activedescendant={`${listboxId}-option-${activeIndex}`}
               onKeyDown={onListKeyDown}
-              className="absolute left-0 top-[calc(100%+0.5rem)] z-40 w-[min(22rem,calc(100vw-2.5rem))] rounded-card border border-line bg-surface p-1.5 shadow-lift focus:outline-none"
+              className="absolute left-0 top-[calc(100%+0.375rem)] z-40 w-[min(21rem,calc(100vw-2.5rem))] rounded-md border border-line bg-surface p-1 shadow-[0_16px_40px_-12px_rgb(0_0_0_/_0.8)] focus:outline-none"
             >
               {options.map((option, index) => {
                 const isSelected = option.value === filter;
@@ -167,9 +167,9 @@ export function TemplateBrowser() {
                     onClick={() => choose(option.value)}
                     onPointerEnter={() => setActiveIndex(index)}
                     className={cn(
-                      "flex cursor-pointer items-center justify-between gap-3 rounded-md px-3 py-2.5 text-sm transition-colors",
+                      "flex cursor-pointer items-center justify-between gap-3 rounded-[5px] px-2.5 py-2 text-sm transition-colors",
                       index === activeIndex ? "bg-subtle text-ink" : "text-muted",
-                      option.value === "all" && "mt-1.5 border-t border-line/70 pt-3",
+                      option.value === "all" && "mt-1 border-t border-line pt-2.5",
                     )}
                   >
                     <span className="flex min-w-0 items-center gap-2.5">
@@ -190,13 +190,13 @@ export function TemplateBrowser() {
           ) : null}
         </div>
 
-        <p aria-live="polite" className="text-sm text-muted">
-          <span className="font-semibold text-ink">{visible.length}</span>{" "}
+        <p aria-live="polite" className="kit-label text-muted">
+          <span className="tabular-nums text-ink">{visible.length}</span>{" "}
           {visible.length === 1 ? "template" : "templates"}
         </p>
       </div>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((template) => (
           <TemplateCard key={template.slug} template={template} />
         ))}

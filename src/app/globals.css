@@ -28,24 +28,34 @@
   --pk-accent-fg: 255 255 255;
 }
 
-/* Gallery / marketing shell — dark, product-like */
+/* ------------------------------------------------------------------
+   Gallery shell
+   Deliberately near-monochrome. Twenty-one template cards each carry
+   their own brand colours, so the chrome stays out of their way and
+   uses exactly one signal colour of its own.
+   ------------------------------------------------------------------ */
 .theme-kit {
-  --pk-radius: 0.875rem;
+  /* Neutral grotesk for product chrome; templates keep their own faces. */
+  --pk-font-sans: var(--pk-font-ui);
+  --pk-radius: 0.625rem;
 
-  --pk-bg: 9 9 14;
-  --pk-surface: 19 19 27;
-  --pk-subtle: 29 29 40;
-  --pk-line: 44 44 58;
-  --pk-ink: 244 244 250;
-  --pk-muted: 150 150 170;
+  /* True neutrals — no blue cast. */
+  --pk-bg: 9 9 9;
+  --pk-surface: 17 17 17;
+  --pk-subtle: 25 25 25;
+  --pk-line: 38 38 38;
+  --pk-ink: 250 250 249;
+  --pk-muted: 152 150 145;
 
-  --pk-brand: 99 102 241;
-  --pk-brand-soft: 33 33 60;
-  --pk-brand-fg: 255 255 255;
+  /* The primary action is white on black. */
+  --pk-brand: 250 250 249;
+  --pk-brand-soft: 30 30 30;
+  --pk-brand-fg: 9 9 9;
 
-  --pk-accent: 45 212 191;
-  --pk-accent-soft: 18 48 46;
-  --pk-accent-fg: 4 24 22;
+  /* One restrained signal colour, warm enough to sit against neutrals. */
+  --pk-accent: 214 178 112;
+  --pk-accent-soft: 38 32 22;
+  --pk-accent-fg: 9 9 9;
 }
 
 /* Chartered Accountant — navy + gold, institutional trust */
@@ -550,4 +560,49 @@
   --pk-accent: 156 74 112;
   --pk-accent-soft: 249 235 242;
   --pk-accent-fg: 255 255 255;
+}
+
+/* ------------------------------------------------------------------
+   Gallery craft details
+   ------------------------------------------------------------------ */
+
+/* Precise hairline grid that fades out, replacing the blurred colour
+   blob that every generated landing page uses. */
+.kit-grid {
+  background-image:
+    linear-gradient(to right, rgb(var(--pk-line) / 0.7) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--pk-line) / 0.7) 1px, transparent 1px);
+  background-size: 76px 76px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 0%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 0%, #000 30%, transparent 100%);
+}
+
+/* A single hairline of light along a card's top edge — the detail that
+   separates a drawn surface from a filled rectangle. */
+.kit-edge {
+  position: relative;
+}
+.kit-edge::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(var(--pk-ink) / 0.14) 22%,
+    rgb(var(--pk-ink) / 0.14) 78%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Micro label: the small letterspaced caps used across the gallery. */
+.kit-label {
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
