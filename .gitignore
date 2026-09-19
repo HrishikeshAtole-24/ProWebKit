@@ -15,3 +15,6 @@ yarn-error.log*
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# Visual Studio local state
+.vs/

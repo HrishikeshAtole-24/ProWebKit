@@ -4,15 +4,15 @@
 
 ### Digital presence for professionals and businesses.
 
-**21 complete, production-ready websites for the professions that need credibility online
+**24 complete, production-ready websites for the professions that need credibility online
 and rarely get it** — accountants, doctors, lawyers, architects, property developers,
-coaching institutes and designers.
+coaching institutes, designers and fitness coaches.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-0f766e.svg?style=flat-square)](LICENSE)
 [![Next.js 15.5](https://img.shields.io/badge/Next.js-15.5-000000?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Templates](https://img.shields.io/badge/templates-21-6366f1?style=flat-square)](#the-library)
+[![Templates](https://img.shields.io/badge/templates-24-6366f1?style=flat-square)](#the-library)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#contributing)
 
 [**The library**](#the-library) · [**Quick start**](#quick-start) · [**Rebrand for a client**](#rebrand-for-a-client) · [**Architecture**](#architecture) · [**Deploy**](#deploy)
@@ -57,7 +57,7 @@ written for that specific profession.
 
 ## The library
 
-21 templates across 7 professions. Every one is a complete page and statically prerendered.
+24 templates across 8 professions. Every one is a complete page and statically prerendered.
 
 <details open>
 <summary><b>Chartered Accountants</b> — 3 templates</summary>
@@ -133,6 +133,21 @@ written for that specific profession.
 | Couture Atelier | Atelier Rhea | Editorial, collections, commission process | `/templates/fashion/couture` |
 | Boutique Label | Indigo Thread | Lookbook, fabric provenance, made-to-order | `/templates/fashion/boutique` |
 | Personal Stylist | Form & Figure | Styling as a service, wardrobe audit, session pricing | `/templates/fashion/stylist` |
+
+</details>
+
+<details>
+<summary><b>Fitness & Coaching</b> — 3 templates</summary>
+
+| Template | Demo brand | The angle | Route |
+| --- | --- | --- | --- |
+| Personal Trainer | Pawar Strength | The one dark template — WhatsApp-first, published pricing | `/templates/fitness/trainer` |
+| Online Coaching | Foundry Coaching | Remote subscription, the weekly loop, plan tiers, transformations | `/templates/fitness/online` |
+| Strength Studio | Anvil Strength | Class timetable, coach roster with certifications, free trial | `/templates/fitness/studio` |
+
+All three carry the full coach brief: about me, certifications, training programs (personal,
+online, weight loss, muscle building, female fitness, special populations), WhatsApp, client
+testimonials, location and service areas, research and knowledge, nutrition and diet, and contact.
 
 </details>
 
@@ -301,9 +316,10 @@ the token table and primitive APIs.
 
 ## Roadmap
 
-- [x] Multiple templates per profession — 21 across 7 categories
+- [x] Multiple templates per profession — 24 across 8 categories
 - [x] Profession filter on the gallery
-- [ ] Photographer, restaurant, salon and fitness categories
+- [x] Fitness & coaching category
+- [ ] Photographer, restaurant and salon categories
 - [ ] Dark mode per template
 - [ ] Working form submissions via server actions
 - [ ] Screenshot generation for the gallery cards

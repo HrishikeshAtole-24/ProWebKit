@@ -505,6 +505,77 @@ export const templates: TemplateMeta[] = [
     ],
     status: "stable",
   },
+
+  // ── Fitness & coaching ─────────────────────────────────────────────
+  {
+    slug: "fitness-trainer",
+    category: "fitness",
+    name: "Personal Trainer",
+    demoBrand: "Pawar Strength",
+    description:
+      "A solo coach working the gym floor. The one dark template in the kit — near-black and volt lime, with WhatsApp as the primary way in.",
+    href: "/templates/fitness/trainer",
+    themeClass: "theme-fitness-trainer",
+    swatch: ["#0C0C0C", "#A3E635"],
+    sections: [
+      "Hero with WhatsApp CTA",
+      "Training programs",
+      "About me",
+      "Certifications",
+      "Nutrition & diet",
+      "Research & knowledge",
+      "Client testimonials",
+      "Location & service areas",
+      "WhatsApp & contact",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "fitness-online",
+    category: "fitness",
+    name: "Online Coaching",
+    demoBrand: "Foundry Coaching",
+    description:
+      "Remote coaching as a subscription — how the week runs, plan tiers with pricing, transformations, and check-ins across time zones.",
+    href: "/templates/fitness/online",
+    themeClass: "theme-fitness-online",
+    swatch: ["#A21CAF", "#0F766E"],
+    sections: [
+      "Hero with plan pricing",
+      "How online coaching runs",
+      "Training programs",
+      "Nutrition & diet",
+      "About & certifications",
+      "Research & knowledge",
+      "Client transformations",
+      "Time zones & service areas",
+      "WhatsApp & apply",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "fitness-studio",
+    category: "fitness",
+    name: "Strength Studio",
+    demoBrand: "Anvil Strength",
+    description:
+      "A small-group strength facility — class timetable, coach roster with certifications, memberships, floor inventory and trial booking.",
+    href: "/templates/fitness/studio",
+    themeClass: "theme-fitness-studio",
+    swatch: ["#1E3A5F", "#4D7C0F"],
+    sections: [
+      "Hero with trial booking",
+      "Training programs",
+      "Weekly timetable",
+      "About the studio",
+      "Coaches & certifications",
+      "Nutrition & diet",
+      "Research & knowledge",
+      "Member testimonials",
+      "Location, WhatsApp & contact",
+    ],
+    status: "stable",
+  },
 ];
 
 export const categoryLabels: Record<TemplateCategory, string> = {
@@ -515,6 +586,7 @@ export const categoryLabels: Record<TemplateCategory, string> = {
   "real-estate": "Real Estate & Construction",
   education: "Education & Coaching",
   fashion: "Fashion & Design",
+  fitness: "Fitness & Coaching",
 };
 
 /** Display order for the gallery. */
@@ -526,6 +598,7 @@ export const categoryOrder: TemplateCategory[] = [
   "real-estate",
   "education",
   "fashion",
+  "fitness",
 ];
 
 export function templatesByCategory(category: TemplateCategory) {

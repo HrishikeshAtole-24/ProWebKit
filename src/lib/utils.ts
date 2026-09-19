@@ -16,3 +16,12 @@ export function initials(name: string) {
     .map((part) => part[0]?.toUpperCase() ?? "")
     .join("");
 }
+
+/**
+ * wa.me deep link. Strips formatting from the number and pre-fills the
+ * first message, so an enquiry arrives with context instead of "hi".
+ */
+export function waLink(phone: string, message?: string) {
+  const digits = phone.replace(/\D/g, "");
+  return `https://wa.me/${digits}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
+}

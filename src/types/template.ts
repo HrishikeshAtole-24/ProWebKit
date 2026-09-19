@@ -7,7 +7,8 @@ export type TemplateCategory =
   | "architect"
   | "real-estate"
   | "education"
-  | "fashion";
+  | "fashion"
+  | "fitness";
 
 export interface TemplateMeta {
   /** Unique id, also the folder name under src/templates. */

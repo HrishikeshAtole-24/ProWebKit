@@ -606,3 +606,54 @@
   text-transform: uppercase;
   font-weight: 500;
 }
+
+/* Fitness — personal trainer: the one dark template, near-black + volt lime */
+.theme-fitness-trainer {
+  --pk-radius: 0.5rem;
+  --pk-bg: 12 12 12;
+  --pk-surface: 20 20 20;
+  --pk-subtle: 28 28 28;
+  --pk-line: 44 44 44;
+  --pk-ink: 250 250 250;
+  --pk-muted: 154 154 152;
+  --pk-brand: 30 30 32;
+  --pk-brand-soft: 40 40 42;
+  --pk-brand-fg: 250 250 250;
+  --pk-accent: 163 230 53;
+  --pk-accent-soft: 34 44 16;
+  --pk-accent-fg: 12 12 12;
+}
+
+/* Fitness — online coaching: magenta + teal, app-like and energetic */
+.theme-fitness-online {
+  --pk-radius: 1rem;
+  --pk-bg: 255 255 255;
+  --pk-surface: 250 247 252;
+  --pk-subtle: 245 239 250;
+  --pk-line: 231 221 239;
+  --pk-ink: 32 22 38;
+  --pk-muted: 112 100 122;
+  --pk-brand: 162 28 175;
+  --pk-brand-soft: 250 232 253;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 15 118 110;
+  --pk-accent-soft: 219 244 241;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* Fitness — strength studio: steel blue + lime, equipment-room industrial */
+.theme-fitness-studio {
+  --pk-radius: 0.25rem;
+  --pk-bg: 255 255 255;
+  --pk-surface: 247 249 251;
+  --pk-subtle: 238 243 248;
+  --pk-line: 215 226 236;
+  --pk-ink: 17 30 46;
+  --pk-muted: 92 108 128;
+  --pk-brand: 30 58 95;
+  --pk-brand-soft: 224 233 243;
+  --pk-brand-fg: 255 255 255;
+  --pk-accent: 77 124 15;
+  --pk-accent-soft: 236 244 220;
+  --pk-accent-fg: 255 255 255;
+}
