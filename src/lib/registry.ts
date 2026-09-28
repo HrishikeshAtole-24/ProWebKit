@@ -530,26 +530,58 @@ export const templates: TemplateMeta[] = [
     ],
     status: "stable",
   },
+  // ── Parked: Foundry Coaching (online-only coaching) ───────────────
+  // Kept for a future release. The template lives on at
+  // src/templates/fitness-online/ and its route at
+  // src/app/templates/fitness/_online/ — the underscore makes it a Next
+  // private folder, so it is excluded from routing but still compiles
+  // when moved back. Uncomment this entry to bring it live.
+  // {
+  //   slug: "fitness-online",
+  //   category: "fitness",
+  //   name: "Online Coaching",
+  //   demoBrand: "Foundry Coaching",
+  //   description:
+  //     "Remote coaching as a subscription — how the week runs, plan tiers with pricing, transformations, and check-ins across time zones.",
+  //   href: "/templates/fitness/online",
+  //   themeClass: "theme-fitness-online",
+  //   swatch: ["#A21CAF", "#0F766E"],
+  //   sections: [
+  //     "Hero with plan pricing",
+  //     "How online coaching runs",
+  //     "Training programs",
+  //     "Nutrition & diet",
+  //     "About & certifications",
+  //     "Research & knowledge",
+  //     "Client transformations",
+  //     "Time zones & service areas",
+  //     "WhatsApp & apply",
+  //   ],
+  //   status: "stable",
+  // },
+
   {
-    slug: "fitness-online",
+    slug: "fitness-fitiminded",
     category: "fitness",
-    name: "Online Coaching",
-    demoBrand: "Foundry Coaching",
+    name: "Elite Home Training",
+    demoBrand: "FitiMinded",
     description:
-      "Remote coaching as a subscription — how the week runs, plan tiers with pricing, transformations, and check-ins across time zones.",
-    href: "/templates/fitness/online",
-    themeClass: "theme-fitness-online",
-    swatch: ["#A21CAF", "#0F766E"],
+      "A private at-home personal training practice. Ivory and bronze, heavily animated with pure CSS, built around the one model the other fitness templates do not cover: the coach comes to you.",
+    href: "/templates/fitness/home",
+    themeClass: "theme-fitiminded",
+    swatch: ["#1A1816", "#7A5E34"],
     sections: [
-      "Hero with plan pricing",
-      "How online coaching runs",
+      "Animated hero with line reveal",
+      "The method & who it is for",
       "Training programs",
+      "How a session runs",
+      "Packages priced by session",
+      "About me & certifications",
       "Nutrition & diet",
-      "About & certifications",
       "Research & knowledge",
-      "Client transformations",
-      "Time zones & service areas",
-      "WhatsApp & apply",
+      "Client testimonials",
+      "Service-area ticker",
+      "WhatsApp & contact",
     ],
     status: "stable",
   },

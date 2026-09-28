@@ -657,3 +657,136 @@
   --pk-accent-soft: 236 244 220;
   --pk-accent-fg: 255 255 255;
 }
+
+/* ------------------------------------------------------------------
+   FitiMinded — elite at-home personal training
+   Ivory ground, espresso ink, bronze signal. The lightest, most
+   editorial palette in the kit, built to carry heavy motion without
+   looking loud.
+   ------------------------------------------------------------------ */
+.theme-fitiminded {
+  --pk-radius: 0.625rem;
+
+  --pk-bg: 250 248 244;
+  --pk-surface: 255 254 251;
+  --pk-subtle: 243 238 230;
+  --pk-line: 228 221 209;
+  --pk-ink: 26 24 22;
+  --pk-muted: 100 93 84;
+
+  --pk-brand: 26 24 22;
+  --pk-brand-soft: 240 235 227;
+  --pk-brand-fg: 250 248 244;
+
+  --pk-accent: 122 94 52;
+  --pk-accent-soft: 246 238 226;
+  --pk-accent-fg: 255 255 255;
+}
+
+/* ------------------------------------------------------------------
+   FitiMinded motion
+   Every animation here is CSS. Nothing ships JavaScript, the default
+   state is always the finished state, and the whole block is skipped
+   under prefers-reduced-motion.
+   ------------------------------------------------------------------ */
+
+@keyframes fm-rise {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fm-clip {
+  from { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(0.4em); }
+  to   { opacity: 1; clip-path: inset(0 0 -0.2em 0); transform: none; }
+}
+
+@keyframes fm-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fm-sheen {
+  from { transform: translateX(-130%) skewX(-18deg); }
+  to   { transform: translateX(260%) skewX(-18deg); }
+}
+
+@keyframes fm-draw {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Above-the-fold copy reveals on load, line by line via --d. */
+  .fm-clip {
+    animation: fm-clip 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .fm-fade {
+    animation: fm-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  /* Service-area ticker. Duplicate the list in markup so -50% loops seamlessly. */
+  .fm-marquee-track {
+    animation: fm-marquee 38s linear infinite;
+    will-change: transform;
+  }
+  .fm-marquee:hover .fm-marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* A light sweep across the primary action on hover. */
+  .fm-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.28), transparent);
+    transform: translateX(-130%) skewX(-18deg);
+    pointer-events: none;
+  }
+  .fm-sheen:hover::after {
+    animation: fm-sheen 0.9s ease-out;
+  }
+
+  /* Scroll-driven: only where the browser supports it, purely additive. */
+  @supports (animation-timeline: view()) {
+    /* Children stagger by finishing progressively later as you scroll in. */
+    .fm-stagger > * {
+      animation: fm-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry calc(34% + (var(--i, 0) * 7%));
+    }
+
+    /* The process rail draws itself down the page. */
+    .fm-rail {
+      transform-origin: 50% 0;
+      animation: fm-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 55%;
+    }
+  }
+}
+
+/* Slow zoom on image placeholders — swap the block for a photograph. */
+.fm-zoom img,
+.fm-zoom > span {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fm-zoom:hover img,
+.fm-zoom:hover > span {
+  transform: scale(1.04);
+}
+
+/* Hairline that draws in from the left on hover. */
+.fm-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fm-link:hover {
+  background-size: 100% 1px;
+}

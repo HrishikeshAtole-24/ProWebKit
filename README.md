@@ -142,12 +142,23 @@ written for that specific profession.
 | Template | Demo brand | The angle | Route |
 | --- | --- | --- | --- |
 | Personal Trainer | Pawar Strength | The one dark template — WhatsApp-first, published pricing | `/templates/fitness/trainer` |
-| Online Coaching | Foundry Coaching | Remote subscription, the weekly loop, plan tiers, transformations | `/templates/fitness/online` |
+| Elite Home Training | FitiMinded | Ivory and bronze, heavily animated in pure CSS, the coach comes to you | `/templates/fitness/home` |
 | Strength Studio | Anvil Strength | Class timetable, coach roster with certifications, free trial | `/templates/fitness/studio` |
 
 All three carry the full coach brief: about me, certifications, training programs (personal,
 online, weight loss, muscle building, female fitness, special populations), WhatsApp, client
 testimonials, location and service areas, research and knowledge, nutrition and diet, and contact.
+
+FitiMinded adds the at-home model the other two do not cover — travel tiers, equipment carried in,
+session-count packages with GST noted, corporate wellness and household rates — and is the kit's
+motion showcase: line-by-line headline reveal, scroll-staggered grids, a self-drawing process rail,
+a looping service-area ticker and sheen on the primary actions. All of it CSS, no JavaScript, and
+skipped entirely under `prefers-reduced-motion`.
+
+> A fourth template, **Foundry Coaching** (online-only coaching), is parked at
+> `src/templates/fitness-online/` with its route at `src/app/templates/fitness/_online/`. The
+> underscore makes it a Next private folder, so it compiles but does not route. Uncomment its
+> registry entry to bring it back.
 
 </details>
 
