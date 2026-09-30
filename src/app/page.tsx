@@ -103,6 +103,7 @@ export default function HomePage() {
           <nav className="flex items-center gap-1" aria-label="Primary">
             {[
               ["Templates", "#templates"],
+              ["Premium", "/premium"],
               ["What you get", "#included"],
               ["How it works", "#start"],
             ].map(([label, href], index) => (
@@ -110,7 +111,7 @@ export default function HomePage() {
                 key={href}
                 href={href}
                 className={`rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-ink ${
-                  index > 0 ? "hidden sm:block" : ""
+                  index > 1 ? "hidden sm:block" : ""
                 }`}
               >
                 {label}
@@ -166,6 +167,13 @@ export default function HomePage() {
                 >
                   <Github className="h-4 w-4" />
                   View source
+                </Link>
+                <Link
+                  href="/premium"
+                  className="group inline-flex h-11 items-center gap-2 px-2 text-sm font-medium text-muted transition-colors hover:text-ink"
+                >
+                  Premium collection
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </div>

@@ -192,6 +192,30 @@ zoom — drop a photograph in and the layout is already correct.
 > All names, figures, credentials, testimonials and results in the demos are **fictional**.
 > Replace them before publishing anything.
 
+## Premium collection
+
+`/premium` is a separate catalogue for brands and public figures where the website is part of the
+product: watch houses, jewellery maisons, fashion houses, car marques, artists and founders. There
+are 18 planned, and one is live now:
+
+| Template | Demo brand | Route | Highlights |
+| --- | --- | --- | --- |
+| Haute Horlogerie Manufacture | Maison Valdère | `/premium/watch/manufacture` | A real-time 3D watch built in code (no model file) that keeps live time. As you scroll, it turns to show the case, the dial and a beating movement. Also: a pinned horizontal collection, a reference detail view with a shared-element transition, and a private viewing request form. |
+
+The other 17 appear in the gallery marked "In the atelier". Premium pages add a heavier stack that
+**only loads under `/premium`**:
+
+- Lenis smooth scroll.
+- Motion (split-text, mask reveals, parallax, magnetic buttons, custom cursor).
+- three.js with React Three Fiber, lazy-loaded, so it is not in the first-load bundle.
+
+The shared kit lives in `src/premium/kit`, and the templates in `src/premium/templates/<slug>`. The
+catalogue is `src/premium/registry.ts`.
+
+Photography comes from Unsplash under the Unsplash License and is resized on Unsplash's CDN. Every
+brand and person in the premium demos is fictional. Reduced-motion visitors get native scrolling
+and a still watch, and the watch falls back to an SVG dial if the browser has no WebGL.
+
 ## Quick start
 
 ```bash

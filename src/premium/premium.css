@@ -1,0 +1,158 @@
+/*
+ * Premium collection styles. Imported by src/app/premium/layout.tsx only, so
+ * none of this ships to the standard templates.
+ *
+ * Premium palettes use their own --pm-* tokens (R G B triplets, like --pk-*)
+ * and are consumed through arbitrary Tailwind values: bg-[rgb(var(--pm-bg))].
+ */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* The custom cursor replaces the system one, except where typing happens. */
+html.pm-cursor,
+html.pm-cursor * {
+  cursor: none !important;
+}
+html.pm-cursor input,
+html.pm-cursor textarea {
+  cursor: text !important;
+}
+
+/* ── Premium gallery (/premium) ─────────────────────────────────────── */
+.theme-pm-gallery {
+  --pm-bg: 8 8 9;
+  --pm-surface: 17 17 19;
+  --pm-line: 38 38 42;
+  --pm-ink: 240 238 233;
+  --pm-muted: 150 148 142;
+  --pm-accent: 214 200 170;
+  --pm-accent-fg: 12 12 12;
+}
+
+/* ── Maison Valdère — haute horlogerie manufacture ──────────────────── */
+.theme-pm-valdere {
+  --pm-bg: 14 12 10;
+  --pm-surface: 21 18 15;
+  --pm-subtle: 29 25 21;
+  --pm-line: 46 40 34;
+  --pm-ink: 241 233 220;
+  --pm-muted: 167 154 135;
+  --pm-accent: 200 163 106;
+  --pm-accent-fg: 20 16 11;
+  /* Ivory interlude sections */
+  --pm-ivory: 236 229 216;
+  --pm-ivory-ink: 27 22 17;
+  --pm-ivory-muted: 107 95 80;
+  --pm-bronze: 118 86 40;
+  font-family: var(--pm-font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.pm-display {
+  font-family: var(--pm-font-display), ui-serif, Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.pm-caps {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Film grain over dark plates, so large flat blacks never band. */
+.pm-grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Underline that draws in from the left on hover. */
+.pm-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pm-link:hover,
+.pm-link:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Hairline form fields */
+.pm-field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--pm-line));
+  background: transparent;
+  padding: 0.9rem 0;
+  color: rgb(var(--pm-ink));
+  font-size: 1rem;
+  border-radius: 0;
+  transition: border-color 0.4s;
+}
+.pm-field::placeholder {
+  color: rgb(var(--pm-muted) / 0.7);
+}
+.pm-field:focus {
+  outline: none;
+  border-bottom-color: rgb(var(--pm-accent));
+}
+.pm-field option {
+  background: rgb(var(--pm-surface));
+  color: rgb(var(--pm-ink));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pm-marquee {
+    animation: pm-marquee 60s linear infinite;
+  }
+  .pm-spin {
+    animation: pm-spin 60s linear infinite;
+  }
+  .pm-spin-fast {
+    animation: pm-spin 8s linear infinite;
+  }
+}
+
+@keyframes pm-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* If JavaScript never runs, the intro curtain still gets out of the way. */
+.pm-intro {
+  animation: pm-intro-failsafe 0.01s linear 4.5s forwards;
+}
+@keyframes pm-intro-failsafe {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* SVG parts that spin around their own centre (tourbillon cage, seconds). */
+.pm-origin {
+  transform-box: fill-box;
+  transform-origin: center;
+}
