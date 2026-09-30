@@ -608,6 +608,148 @@ export const templates: TemplateMeta[] = [
     ],
     status: "stable",
   },
+
+  // ── Photography ────────────────────────────────────────────────────
+  {
+    slug: "photo-wedding",
+    category: "photography",
+    name: "Wedding & Editorial",
+    demoBrand: "Saanjh Studio",
+    description:
+      "Film-warm wedding photography on bone and clay. Story-led rather than package-led, with a drifting full-bleed hero and slow, quiet reveals.",
+    href: "/templates/photography/wedding",
+    themeClass: "theme-photo-wedding",
+    swatch: ["#2A231C", "#964F40"],
+    sections: [
+      "Drifting full-bleed hero",
+      "Recent weddings",
+      "How we photograph",
+      "Collections & pricing",
+      "The day, hour by hour",
+      "Albums & prints",
+      "Couples on the work",
+      "FAQ",
+      "Enquiry form",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "photo-fineart",
+    category: "photography",
+    name: "Fine Art & Documentary",
+    demoBrand: "Kabir Sen",
+    description:
+      "A gallery-grade practice site. Monochrome, zero radius, museum wall labels, an exhibition record and an edition-based print list.",
+    href: "/templates/photography/fine-art",
+    themeClass: "theme-photo-fineart",
+    swatch: ["#141413", "#8C2F27"],
+    sections: [
+      "Still hero with plate index",
+      "Series",
+      "Statement",
+      "Exhibitions",
+      "Prints & editions",
+      "Publications",
+      "Collections & press",
+      "Biography",
+      "Gallery enquiry",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "photo-commercial",
+    category: "photography",
+    name: "Commercial & Product",
+    demoBrand: "Northlight Studio",
+    description:
+      "A working studio for brands — published day rates, licensing tiers, a kit list, turnaround commitments and a shoot brief form.",
+    href: "/templates/photography/commercial",
+    themeClass: "theme-photo-commercial",
+    swatch: ["#1C1F24", "#0E7490"],
+    sections: [
+      "Studio hero",
+      "What we shoot",
+      "Day rates",
+      "Licensing, explained",
+      "How a shoot runs",
+      "Studio & kit",
+      "Selected clients",
+      "FAQ",
+      "Shoot brief",
+    ],
+    status: "stable",
+  },
+
+  // ── Actors & models ────────────────────────────────────────────────
+  {
+    slug: "talent-actor",
+    category: "talent",
+    name: "Screen Actor",
+    demoBrand: "Aarav Nair",
+    description:
+      "A casting-ready actor site in house black and stage amber. Showreel, credits laid out like a call sheet, casting stats, training and representation.",
+    href: "/templates/talent/actor",
+    themeClass: "theme-talent-actor",
+    swatch: ["#0F0E0D", "#E0A63C"],
+    sections: [
+      "Spotlight hero",
+      "Showreel",
+      "Credits",
+      "Casting information",
+      "Training",
+      "Press & reviews",
+      "Gallery",
+      "Representation",
+      "Contact",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "talent-model",
+    category: "talent",
+    name: "Fashion Model",
+    demoBrand: "Noor Contractor",
+    description:
+      "Stark paper, true black, one fashion red. Editorial book with wipe reveals, digitals grid, measurements card, campaign list and agency board.",
+    href: "/templates/talent/model",
+    themeClass: "theme-talent-model",
+    swatch: ["#0A0A0A", "#C42918"],
+    sections: [
+      "Editorial hero",
+      "The book",
+      "Digitals",
+      "Measurements",
+      "Campaigns & runway",
+      "Editorial & press",
+      "Agencies",
+      "Availability",
+      "Direct booking",
+    ],
+    status: "stable",
+  },
+  {
+    slug: "talent-creator",
+    category: "talent",
+    name: "Creator Media Kit",
+    demoBrand: "Meher Qureshi",
+    description:
+      "A media kit that reads like a rate card, not a mood board — audience data with animated bars, content pillars, past collaborations and published rates.",
+    href: "/templates/talent/creator",
+    themeClass: "theme-talent-creator",
+    swatch: ["#171522", "#B4188E"],
+    sections: [
+      "Media-kit hero",
+      "Audience",
+      "Content pillars",
+      "Selected collaborations",
+      "Case study",
+      "Rate card",
+      "How I work with brands",
+      "Press",
+      "Booking enquiry",
+    ],
+    status: "stable",
+  },
 ];
 
 export const categoryLabels: Record<TemplateCategory, string> = {
@@ -619,6 +761,8 @@ export const categoryLabels: Record<TemplateCategory, string> = {
   education: "Education & Coaching",
   fashion: "Fashion & Design",
   fitness: "Fitness & Coaching",
+  photography: "Photography",
+  talent: "Actors & Models",
 };
 
 /** Display order for the gallery. */
@@ -631,6 +775,8 @@ export const categoryOrder: TemplateCategory[] = [
   "education",
   "fashion",
   "fitness",
+  "photography",
+  "talent",
 ];
 
 export function templatesByCategory(category: TemplateCategory) {

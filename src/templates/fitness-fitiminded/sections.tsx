@@ -41,7 +41,7 @@ import {
 const telHref = `tel:${studio.phone.replace(/[\s+]/g, "")}`;
 const wa = waLink(studio.whatsapp, hero.whatsappMessage);
 
-/** Stagger helper — `.fm-stagger` reads --i to finish each child later. */
+/** Stagger helper — `.pk-stagger` reads --i to finish each child later. */
 const stagger = (index: number) => ({ "--i": index }) as React.CSSProperties;
 
 /** Load-in delay for above-the-fold copy. */
@@ -84,7 +84,7 @@ export function Hero() {
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div>
             <p
-              className="fm-fade flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-muted"
+              className="pk-fade flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-muted"
               style={delay(0)}
             >
               <span aria-hidden className="h-px w-7 bg-accent" />
@@ -95,7 +95,7 @@ export function Hero() {
               {hero.titleLines.map((line, index) => (
                 <span
                   key={line}
-                  className="fm-clip block"
+                  className="pk-clip block"
                   style={delay(140 + index * 130)}
                 >
                   {index === hero.titleLines.length - 1 ? (
@@ -108,13 +108,13 @@ export function Hero() {
             </h1>
 
             <p
-              className="fm-fade mt-8 max-w-xl text-[17px] leading-[1.7] text-muted"
+              className="pk-fade mt-8 max-w-xl text-[17px] leading-[1.7] text-muted"
               style={delay(560)}
             >
               {hero.subtitle}
             </p>
 
-            <ul className="fm-fade mt-9 space-y-3" style={delay(660)}>
+            <ul className="pk-fade mt-9 space-y-3" style={delay(660)}>
               {hero.markers.map((marker) => (
                 <li key={marker} className="flex items-start gap-3 text-sm text-ink">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -123,10 +123,10 @@ export function Hero() {
               ))}
             </ul>
 
-            <div className="fm-fade mt-10 flex flex-wrap items-center gap-3" style={delay(760)}>
+            <div className="pk-fade mt-10 flex flex-wrap items-center gap-3" style={delay(760)}>
               <Link
                 href="#contact"
-                className="fm-sheen group relative inline-flex h-12 items-center gap-2 overflow-hidden rounded-card bg-brand px-6 text-sm font-medium text-brand-fg transition-opacity hover:opacity-95"
+                className="pk-sheen group relative inline-flex h-12 items-center gap-2 overflow-hidden rounded-card bg-brand px-6 text-sm font-medium text-brand-fg transition-opacity hover:opacity-95"
               >
                 Book a consultation
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -144,7 +144,7 @@ export function Hero() {
           </div>
 
           {/* Portrait plate — swap the inner span for a photograph */}
-          <div className="fm-fade fm-zoom relative overflow-hidden rounded-card border border-line bg-subtle" style={delay(420)}>
+          <div className="pk-fade pk-zoom relative overflow-hidden rounded-card border border-line bg-subtle" style={delay(420)}>
             <span className="block aspect-[4/5] w-full bg-brand-soft" aria-hidden />
             <div className="absolute inset-x-5 bottom-5 rounded-card border border-line bg-bg/92 p-5 backdrop-blur-sm">
               <p className="text-[15px] font-semibold tracking-[-0.01em] text-ink">{studio.founder}</p>
@@ -160,7 +160,7 @@ export function Hero() {
 
       <div className="relative border-t border-line bg-surface">
         <Container>
-          <dl className="fm-stagger grid grid-cols-2 divide-line sm:grid-cols-4 sm:divide-x">
+          <dl className="pk-stagger grid grid-cols-2 divide-line sm:grid-cols-4 sm:divide-x">
             {stats.map((stat, index) => (
               <div key={stat.label} style={stagger(index)} className="px-2 py-7 sm:px-6">
                 <dt className="text-[1.75rem] font-semibold tabular-nums tracking-[-0.03em] text-ink">
@@ -187,7 +187,7 @@ export function Method() {
           <SectionHeading eyebrow="The method" title={method.title} description={method.body} />
         </div>
 
-        <ol className="fm-stagger -mt-6">
+        <ol className="pk-stagger -mt-6">
           {method.pillars.map((pillar, index) => (
             <li
               key={pillar.index}
@@ -211,7 +211,7 @@ export function WhoFor() {
   return (
     <Section id="who" tone="surface" space="compact">
       <SectionHeading eyebrow="Who it is for" title="Six situations this suits" />
-      <div className="fm-stagger mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="pk-stagger mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {whoFor.map((item, index) => (
           <div key={item.who} style={stagger(index)} className="border-t border-ink/20 pt-5">
             <h3 className="text-[15px] font-semibold tracking-[-0.01em] text-ink">{item.who}</h3>
@@ -233,7 +233,7 @@ export function Programs() {
         description="Every one begins with the same complimentary consultation at your home, and every one is coached one to one unless you ask otherwise."
       />
 
-      <div className="fm-stagger mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="pk-stagger mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {programs.map((program, index) => (
           <article
             key={program.name}
@@ -273,9 +273,9 @@ export function Sessions() {
         {/* the rail draws itself as the section scrolls past */}
         <span
           aria-hidden
-          className="fm-rail absolute left-[0.6875rem] top-2 h-[calc(100%-1rem)] w-px bg-accent/45 sm:left-[1.1875rem]"
+          className="pk-rail absolute left-[0.6875rem] top-2 h-[calc(100%-1rem)] w-px bg-accent/45 sm:left-[1.1875rem]"
         />
-        <div className="fm-stagger">
+        <div className="pk-stagger">
           {session.map((item, index) => (
             <li key={item.step} style={stagger(index)} className="relative list-none pb-10 last:pb-0">
               <span
@@ -309,7 +309,7 @@ export function Packages() {
         description="Session frequency is the only variable. Nutrition, travel within our areas, re-tests and reporting are included in every tier."
       />
 
-      <div className="fm-stagger mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:items-start">
+      <div className="pk-stagger mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:items-start">
         {packages.map((pack, index) => (
           <article
             key={pack.name}
@@ -352,7 +352,7 @@ export function Packages() {
               className={cn(
                 "mt-7 inline-flex h-11 w-full items-center justify-center rounded-card text-sm font-medium transition",
                 pack.featured
-                  ? "fm-sheen relative overflow-hidden bg-brand text-brand-fg hover:opacity-95"
+                  ? "pk-sheen relative overflow-hidden bg-brand text-brand-fg hover:opacity-95"
                   : "border border-line text-ink hover:border-accent hover:text-accent",
               )}
             >
@@ -389,7 +389,7 @@ export function About() {
             ))}
           </div>
 
-          <dl className="fm-stagger mt-9 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+          <dl className="pk-stagger mt-9 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
             {about.principles.map((principle, index) => (
               <div key={principle.label} style={stagger(index)} className="bg-bg p-5">
                 <dt className="text-sm font-semibold text-ink">{principle.label}</dt>
@@ -447,7 +447,7 @@ export function Nutrition() {
         <SectionHeading inverted eyebrow="Nutrition & diet" title={nutrition.title} description={nutrition.body} />
 
         <div>
-          <dl className="fm-stagger divide-y divide-brand-fg/15 border-y border-brand-fg/15">
+          <dl className="pk-stagger divide-y divide-brand-fg/15 border-y border-brand-fg/15">
             {nutrition.points.map((point, index) => (
               <div key={point.title} style={stagger(index)} className="grid gap-2 py-5 sm:grid-cols-[13rem_1fr] sm:gap-8">
                 <dt className="text-[15px] font-medium text-brand-fg">{point.title}</dt>
@@ -468,7 +468,7 @@ export function Research() {
     <Section id="research">
       <SectionHeading eyebrow="Research & knowledge" title={research.title} description={research.body} />
 
-      <div className="fm-stagger mt-10 grid gap-x-16 gap-y-8 lg:grid-cols-2">
+      <div className="pk-stagger mt-10 grid gap-x-16 gap-y-8 lg:grid-cols-2">
         {research.entries.map((entry, index) => (
           <article key={entry.q} style={stagger(index)} className="border-t border-line pt-5">
             <h3 className="text-[15px] font-semibold tracking-[-0.01em] text-ink">{entry.q}</h3>
@@ -490,7 +490,7 @@ export function Testimonials() {
         description="A discretion policy is only worth something if it survives the marketing page. Ours does."
       />
 
-      <div className="fm-stagger mt-10 grid gap-6 sm:grid-cols-2">
+      <div className="pk-stagger mt-10 grid gap-6 sm:grid-cols-2">
         {testimonials.map((testimonial, index) => (
           <figure
             key={testimonial.role}
@@ -521,8 +521,8 @@ export function ServiceAreas() {
       <SectionHeading eyebrow="Location" title={serviceAreas.title} description={serviceAreas.body} />
 
       {/* Ticker of neighbourhoods. The list is duplicated so the loop is seamless. */}
-      <div className="fm-marquee relative mt-10 overflow-hidden border-y border-line py-5">
-        <div className="fm-marquee-track flex w-max items-center gap-10">
+      <div className="pk-marquee relative mt-10 overflow-hidden border-y border-line py-5">
+        <div className="pk-marquee-track flex w-max items-center gap-10">
           {[...serviceAreas.areas, ...serviceAreas.areas].map((area, index) => (
             <span
               key={`${area}-${index}`}
@@ -547,7 +547,7 @@ export function ServiceAreas() {
         />
       </div>
 
-      <dl className="fm-stagger mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="pk-stagger mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
         {serviceAreas.tiers.map((tier, index) => (
           <div key={tier.tier} style={stagger(index)} className="bg-bg p-6">
             <dt className="flex items-center gap-2 text-sm font-semibold text-ink">
@@ -583,7 +583,7 @@ export function WhatsAppBand() {
           href={wa}
           target="_blank"
           rel="noreferrer"
-          className="fm-sheen group relative inline-flex h-12 shrink-0 items-center gap-2.5 overflow-hidden rounded-card bg-brand px-6 text-sm font-medium text-brand-fg transition-opacity hover:opacity-95"
+          className="pk-sheen group relative inline-flex h-12 shrink-0 items-center gap-2.5 overflow-hidden rounded-card bg-brand px-6 text-sm font-medium text-brand-fg transition-opacity hover:opacity-95"
         >
           <MessageCircle className="h-4 w-4" />
           {studio.whatsapp}
@@ -609,7 +609,7 @@ export function Contact() {
               <div>
                 <dt className="text-[11px] uppercase tracking-[0.16em] text-muted">WhatsApp</dt>
                 <dd className="mt-0.5">
-                  <a href={wa} target="_blank" rel="noreferrer" className="fm-link text-ink">
+                  <a href={wa} target="_blank" rel="noreferrer" className="pk-link text-ink">
                     {studio.whatsapp}
                   </a>
                 </dd>
@@ -620,7 +620,7 @@ export function Contact() {
               <div>
                 <dt className="text-[11px] uppercase tracking-[0.16em] text-muted">Concierge</dt>
                 <dd className="mt-0.5">
-                  <a href={telHref} className="fm-link text-ink">
+                  <a href={telHref} className="pk-link text-ink">
                     {studio.phone}
                   </a>
                 </dd>
@@ -699,7 +699,7 @@ export function Contact() {
             />
           </Field>
 
-          <Button type="submit" variant="primary" size="lg" className="fm-sheen relative mt-8 w-full overflow-hidden">
+          <Button type="submit" variant="primary" size="lg" className="pk-sheen relative mt-8 w-full overflow-hidden">
             Request a consultation
           </Button>
 

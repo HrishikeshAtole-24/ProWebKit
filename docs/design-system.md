@@ -153,6 +153,29 @@ A complete practice site is a tall page. Three shared pieces make that navigable
 `TemplateShell` mounts the palette, the preview strip and `ReadingProgress` in one place, so a
 route file is just a theme name and a list of sections.
 
+## Motion layer
+
+The portfolio-grade templates (FitiMinded, photography, actors & models) share one CSS motion
+layer. There is no JavaScript in it, the default state is always the finished state — so an
+unsupported browser simply shows the content — and the whole block sits inside
+`prefers-reduced-motion: no-preference`.
+
+| Class | Does | Control |
+| --- | --- | --- |
+| `.pk-clip` | Line-by-line clip reveal, for headlines | `--d` delay |
+| `.pk-fade` | Rise and fade on load | `--d` delay |
+| `.pk-wipe` | Editorial wipe from the element's own edge | `--d` delay |
+| `.pk-stagger > *` | Scroll-driven entrance, each child finishing later | `--i` index |
+| `.pk-rail` | A rule that draws itself down the page | scroll |
+| `.pk-drift` | Slow parallax on full-bleed plates | scroll |
+| `.pk-marquee-track` | Looping ticker, pauses on hover | — |
+| `.pk-sheen` | Light sweep across a primary action on hover | — |
+| `.pk-zoom` | Slow scale on an image plate | — |
+| `.pk-link` | Underline drawn in from the left | — |
+
+`--i` and `--d` are passed as inline styles from small `stagger()` and `delay()` helpers defined at
+the top of each template's `sections.tsx`.
+
 ## Utilities
 
 Defined in the `@layer utilities` block of `globals.css`:

@@ -4,15 +4,15 @@
 
 ### Digital presence for professionals and businesses.
 
-**24 complete, production-ready websites for the professions that need credibility online
+**30 complete, production-ready websites for the professions that need credibility online
 and rarely get it** — accountants, doctors, lawyers, architects, property developers,
-coaching institutes, designers and fitness coaches.
+coaching institutes, designers, fitness coaches, photographers, actors and models.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-0f766e.svg?style=flat-square)](LICENSE)
 [![Next.js 15.5](https://img.shields.io/badge/Next.js-15.5-000000?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Templates](https://img.shields.io/badge/templates-24-6366f1?style=flat-square)](#the-library)
+[![Templates](https://img.shields.io/badge/templates-30-6366f1?style=flat-square)](#the-library)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#contributing)
 
 [**The library**](#the-library) · [**Quick start**](#quick-start) · [**Rebrand for a client**](#rebrand-for-a-client) · [**Architecture**](#architecture) · [**Deploy**](#deploy)
@@ -57,7 +57,7 @@ written for that specific profession.
 
 ## The library
 
-24 templates across 8 professions. Every one is a complete page and statically prerendered.
+30 templates across 10 professions. Every one is a complete page and statically prerendered.
 
 <details open>
 <summary><b>Chartered Accountants</b> — 3 templates</summary>
@@ -159,6 +159,32 @@ skipped entirely under `prefers-reduced-motion`.
 > `src/templates/fitness-online/` with its route at `src/app/templates/fitness/_online/`. The
 > underscore makes it a Next private folder, so it compiles but does not route. Uncomment its
 > registry entry to bring it back.
+
+</details>
+
+<details>
+<summary><b>Photography</b> — 3 templates</summary>
+
+| Template | Demo brand | The angle | Route |
+| --- | --- | --- | --- |
+| Wedding & Editorial | Saanjh Studio | Film-warm, story-led, drifting hero, published collections | `/templates/photography/wedding` |
+| Fine Art & Documentary | Kabir Sen | Gallery monochrome, wall labels, editioned print list | `/templates/photography/fine-art` |
+| Commercial & Product | Northlight Studio | Published day rates *and* a licensing table | `/templates/photography/commercial` |
+
+</details>
+
+<details>
+<summary><b>Actors & Models</b> — 3 templates</summary>
+
+| Template | Demo brand | The angle | Route |
+| --- | --- | --- | --- |
+| Screen Actor | Aarav Nair | House black and stage amber, credits as a call sheet | `/templates/talent/actor` |
+| Fashion Model | Noor Contractor | Stark paper, name at scale, digitals and measurements | `/templates/talent/model` |
+| Creator Media Kit | Meher Qureshi | Audience data with sourced numbers and a published rate card | `/templates/talent/creator` |
+
+These six are portfolio-grade and lean hardest on the shared motion layer. They ship **no images**:
+every plate is a CSS block, clearly marked, sized to the right aspect ratio and wired for the hover
+zoom — drop a photograph in and the layout is already correct.
 
 </details>
 
@@ -327,10 +353,11 @@ the token table and primitive APIs.
 
 ## Roadmap
 
-- [x] Multiple templates per profession — 24 across 8 categories
+- [x] Multiple templates per profession — 30 across 10 categories
 - [x] Profession filter on the gallery
 - [x] Fitness & coaching category
-- [ ] Photographer, restaurant and salon categories
+- [x] Photography and actor/model categories
+- [ ] Restaurant and salon categories
 - [ ] Dark mode per template
 - [ ] Working form submissions via server actions
 - [ ] Screenshot generation for the gallery cards
