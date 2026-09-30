@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s · ProWebKit",
   },
   description:
-    "21 complete, production-ready websites for the professions that need credibility online — chartered accountants, doctors, lawyers, architects, property developers, coaching institutes and designers. Next.js, accessible, MIT licensed.",
+    "30 complete, production-ready websites for the professions that need credibility online — accountants, doctors, lawyers, architects, property developers, coaching institutes, designers, fitness coaches, photographers, actors and models. Next.js, accessible, MIT licensed.",
   keywords: [
     "website templates",
     "Next.js templates",
@@ -44,6 +44,10 @@ export const metadata: Metadata = {
     "doctor website template",
     "law firm website template",
     "architect portfolio template",
+    "photographer website template",
+    "actor website template",
+    "model portfolio template",
+    "personal trainer website",
     "real estate website template",
     "coaching institute website",
     "small business website",
@@ -55,14 +59,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "ProWebKit — Digital presence for professionals and businesses",
     description:
-      "21 complete, production-ready websites across 7 professions. Fork it, rewrite one file, deploy.",
+      "30 complete, production-ready websites across 10 professions. Fork it, rewrite one file, deploy.",
     siteName: "ProWebKit",
   },
   twitter: {
     card: "summary_large_image",
     title: "ProWebKit — Digital presence for professionals and businesses",
     description:
-      "21 complete, production-ready websites across 7 professions. Fork it, rewrite one file, deploy.",
+      "30 complete, production-ready websites across 10 professions. Fork it, rewrite one file, deploy.",
   },
 };
 
