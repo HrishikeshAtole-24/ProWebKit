@@ -192,6 +192,46 @@ zoom — drop a photograph in and the layout is already correct.
 > All names, figures, credentials, testimonials and results in the demos are **fictional**.
 > Replace them before publishing anything.
 
+## Give a client their own repo
+
+When a client picks a template, one command turns it into a standalone Next.js project and
+publishes it as a public GitHub repository:
+
+```bash
+npm run export -- talent-model
+```
+
+The script asks for:
+
+- a repository name
+- a GitHub personal access token, which it never saves. Create one at
+  [github.com/settings/tokens](https://github.com/settings/tokens/new) with the `public_repo` scope.
+- the commit author
+
+It then creates the repository and pushes the site to `main`.
+
+**What the client gets.** The template's files are copied unchanged. The script traces every file
+the template imports and copies it at the same path, so the client's site renders exactly like the
+ProWebKit page. Only three things differ:
+
+- the template is the home page
+- the gallery preview strip is removed
+- `globals.css` keeps only that template's theme
+
+`package.json` lists only the packages the template uses, and the lockfile pins them to the
+versions ProWebKit runs.
+
+| Option | Does |
+| --- | --- |
+| `--repo <name>` | Skip the name prompt |
+| `--owner <org>` | Publish under an organisation instead of your account |
+| `--no-push` | Only build the folder (`../prowebkit-exports/<repo>`) |
+| `--verify` | Install and run a production build of the export first |
+
+**Updating a client.** Run the same command again with the same repo name. The current version is
+pushed as a new commit on top of the client's history. ProWebKit stays the source of truth, so a
+fix made here can be shipped to any client repo.
+
 ## Quick start
 
 ```bash
